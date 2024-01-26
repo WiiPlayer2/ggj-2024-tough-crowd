@@ -1,10 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://dw8tbafwj1rgo"]
 
+[ext_resource type="Texture2D" uid="uid://kq63ictuirhc" path="res://sprites/tim_side.png" id="1_saxit"]
+
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3hx6l"]
 size = Vector2(600, 200)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4leur"]
-size = Vector2(100, 300)
 
 [node name="Stage" type="Node2D"]
 
@@ -15,5 +14,5 @@ offset = Vector2(0, -100)
 [node name="Tim" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Tim"]
-texture = SubResource("PlaceholderTexture2D_4leur")
+texture = ExtResource("1_saxit")
 offset = Vector2(0, -200)
