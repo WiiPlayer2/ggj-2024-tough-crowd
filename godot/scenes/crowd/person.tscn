@@ -5,11 +5,10 @@
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kbo53"]
 size = Vector2(20, 30)
 
-[node name="Person" type="Sprite2D" node_paths=PackedStringArray("head", "face")]
+[node name="Person" type="Sprite2D" node_paths=PackedStringArray("head")]
 texture = SubResource("PlaceholderTexture2D_kbo53")
 script = ExtResource("1_mx0i8")
 head = NodePath("Head")
-face = NodePath("")
 
 [node name="Head" type="Node2D" parent="."]
 position = Vector2(0, -16)
