@@ -1,0 +1,76 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx6htkgx23t8v"]
+
+[ext_resource type="Script" path="res://scenes/crowd/crowd.gd" id="1_y7wyj"]
+[ext_resource type="Texture2D" uid="uid://c37ydueny6n1f" path="res://scenes/crowd/table.png" id="2_kf115"]
+
+[node name="Crowd" type="Node2D"]
+position = Vector2(240, 232)
+script = ExtResource("1_y7wyj")
+
+[node name="Seats" type="Node" parent="."]
+
+[node name="Seat_1" type="Node2D" parent="Seats"]
+position = Vector2(168, 156)
+
+[node name="Seat_10" type="Node2D" parent="Seats"]
+position = Vector2(311, 137)
+
+[node name="Seat_7" type="Node2D" parent="Seats"]
+position = Vector2(249, 81)
+
+[node name="Seat_16" type="Node2D" parent="Seats"]
+position = Vector2(320, 274)
+
+[node name="Seat_5" type="Node2D" parent="Seats"]
+position = Vector2(205, 35)
+
+[node name="Seat_12" type="Node2D" parent="Seats"]
+position = Vector2(359, 184)
+
+[node name="Seat_8" type="Node2D" parent="Seats"]
+position = Vector2(204, 130)
+
+[node name="Seat_13" type="Node2D" parent="Seats"]
+position = Vector2(315, 187)
+
+[node name="Seat_2" type="Node2D" parent="Seats"]
+position = Vector2(122, 197)
+
+[node name="Seat_3" type="Node2D" parent="Seats"]
+position = Vector2(217, 199)
+
+[node name="Seat_15" type="Node2D" parent="Seats"]
+position = Vector2(366, 231)
+
+[node name="Seat_4" type="Node2D" parent="Seats"]
+position = Vector2(166, 244)
+
+[node name="Seat_9" type="Node2D" parent="Seats"]
+position = Vector2(359, 94)
+
+[node name="Seat_14" type="Node2D" parent="Seats"]
+position = Vector2(276, 232)
+
+[node name="Seat_6" type="Node2D" parent="Seats"]
+position = Vector2(159, 79)
+
+[node name="Seat_11" type="Node2D" parent="Seats"]
+position = Vector2(401, 133)
+
+[node name="Tables" type="Node" parent="."]
+
+[node name="Table_1" type="Sprite2D" parent="Tables"]
+position = Vector2(170, 199)
+texture = ExtResource("2_kf115")
+
+[node name="Table_2" type="Sprite2D" parent="Tables"]
+position = Vector2(359, 138)
+texture = ExtResource("2_kf115")
+
+[node name="Table_3" type="Sprite2D" parent="Tables"]
+position = Vector2(203, 84)
+texture = ExtResource("2_kf115")
+
+[node name="Table_4" type="Sprite2D" parent="Tables"]
+position = Vector2(319, 230)
+texture = ExtResource("2_kf115")

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl4fax7fbh2g7"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kbo53"]
+size = Vector2(20, 30)
+
+[node name="Person" type="Sprite2D"]
+texture = SubResource("PlaceholderTexture2D_kbo53")
