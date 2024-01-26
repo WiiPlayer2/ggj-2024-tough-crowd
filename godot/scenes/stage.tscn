@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dw8tbafwj1rgo"]
+[gd_scene load_steps=5 format=3 uid="uid://cicyfp5xjvvu4"]
 
 [ext_resource type="Script" path="res://scenes/Tim.gd" id="1_g3k2b"]
 [ext_resource type="Texture2D" uid="uid://kq63ictuirhc" path="res://sprites/tim_side.png" id="1_saxit"]
@@ -10,16 +10,20 @@ size = Vector2(600, 200)
 [node name="Stage" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1, 0.3)
 texture = SubResource("PlaceholderTexture2D_3hx6l")
 offset = Vector2(0, -100)
 
-[node name="Tim" type="Node2D" parent="." node_paths=PackedStringArray("boundary")]
+[node name="Tim" type="Node2D" parent="." node_paths=PackedStringArray("boundary", "tim_sprite")]
 script = ExtResource("1_g3k2b")
 boundary = NodePath("../Boundary")
+tim_sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="Tim"]
+position = Vector2(-12, -142)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_saxit")
-offset = Vector2(0, -200)
+offset = Vector2(0, 50)
 
 [node name="Boundary" type="Node2D" parent="."]
 script = ExtResource("2_8p6ir")
