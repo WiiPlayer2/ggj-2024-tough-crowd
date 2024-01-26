@@ -1,7 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://cl4fax7fbh2g7"]
+[gd_scene load_steps=3 format=3 uid="uid://cl4fax7fbh2g7"]
+
+[ext_resource type="PackedScene" uid="uid://bvc6fbd5cgb0i" path="res://scenes/faces/face_curly.tscn" id="1_jccgy"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kbo53"]
 size = Vector2(20, 30)
 
 [node name="Person" type="Sprite2D"]
 texture = SubResource("PlaceholderTexture2D_kbo53")
+
+[node name="FaceCurly" parent="." instance=ExtResource("1_jccgy")]
+position = Vector2(0, -16)
+scale = Vector2(0.3, 0.3)

@@ -7,6 +7,24 @@
 position = Vector2(240, 232)
 script = ExtResource("1_y7wyj")
 
+[node name="Tables" type="Node" parent="."]
+
+[node name="Table_1" type="Sprite2D" parent="Tables"]
+position = Vector2(170, 199)
+texture = ExtResource("2_kf115")
+
+[node name="Table_2" type="Sprite2D" parent="Tables"]
+position = Vector2(359, 138)
+texture = ExtResource("2_kf115")
+
+[node name="Table_3" type="Sprite2D" parent="Tables"]
+position = Vector2(203, 84)
+texture = ExtResource("2_kf115")
+
+[node name="Table_4" type="Sprite2D" parent="Tables"]
+position = Vector2(319, 230)
+texture = ExtResource("2_kf115")
+
 [node name="Seats" type="Node" parent="."]
 
 [node name="Seat_1" type="Node2D" parent="Seats"]
@@ -56,21 +74,3 @@ position = Vector2(159, 79)
 
 [node name="Seat_11" type="Node2D" parent="Seats"]
 position = Vector2(401, 133)
-
-[node name="Tables" type="Node" parent="."]
-
-[node name="Table_1" type="Sprite2D" parent="Tables"]
-position = Vector2(170, 199)
-texture = ExtResource("2_kf115")
-
-[node name="Table_2" type="Sprite2D" parent="Tables"]
-position = Vector2(359, 138)
-texture = ExtResource("2_kf115")
-
-[node name="Table_3" type="Sprite2D" parent="Tables"]
-position = Vector2(203, 84)
-texture = ExtResource("2_kf115")
-
-[node name="Table_4" type="Sprite2D" parent="Tables"]
-position = Vector2(319, 230)
-texture = ExtResource("2_kf115")
