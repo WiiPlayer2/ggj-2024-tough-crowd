@@ -8,6 +8,7 @@ radius = 22.4893
 height = 44.9786
 
 [node name="BottleSprite" type="Sprite2D"]
+z_index = 50
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_uea7l")
 script = ExtResource("1_87ktq")

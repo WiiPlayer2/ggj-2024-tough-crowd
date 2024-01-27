@@ -68,7 +68,7 @@ func _process(delta):
 		mood += profile.lashout_decay * delta
 	
 
-	if mood < -9.9:
+	if mood < profile.lashout_threshold:
 		throw_bottle()
 		
 	update_expression()
