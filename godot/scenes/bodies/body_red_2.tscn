@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dl3dhmyn6ba8r"]
+
+[ext_resource type="Texture2D" uid="uid://c2cg5x7x14nd" path="res://sprites/bodies/body_red_2.svg" id="1_g6wgn"]
+
+[node name="BodyRed2" type="Sprite2D"]
+texture = ExtResource("1_g6wgn")
