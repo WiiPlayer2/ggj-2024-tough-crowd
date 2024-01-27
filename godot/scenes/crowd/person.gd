@@ -77,10 +77,6 @@ func _input(event):
 		elif Input.is_key_pressed(KEY_ENTER):
 			update_mood(-1.)
 
-func hear_joke():
-	var change = randf_range(-3., 3.)
-	update_mood(change)
-	
 func update_mood(change: float):
 	if mood > profile.happy_threshold and change > 0 and laughter_left <= 0:
 		laughter_left = laughter_duration
