@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cl4fax7fbh2g7"]
+[gd_scene load_steps=4 format=3 uid="uid://cl4fax7fbh2g7"]
 
 [ext_resource type="Script" path="res://scenes/crowd/person.gd" id="1_mx0i8"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kbo53"]
 size = Vector2(20, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5rd5b"]
 
 [node name="Person" type="Sprite2D" node_paths=PackedStringArray("head")]
 texture = SubResource("PlaceholderTexture2D_kbo53")
@@ -13,3 +15,8 @@ head = NodePath("Head")
 [node name="Head" type="Node2D" parent="."]
 position = Vector2(0, -16)
 scale = Vector2(0.3, 0.3)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_5rd5b")

@@ -1,3 +1,4 @@
+class_name Person
 extends Sprite2D
 
 @export var head : Node2D
@@ -24,3 +25,6 @@ func set_random_face():
 	var face_res = load(known_faces[randi() % known_faces.size()])
 	face = face_res.instantiate()
 	head.add_child(face)
+
+func on_joke(joke: Joke):
+	pass

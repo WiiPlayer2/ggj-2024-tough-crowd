@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cicyfp5xjvvu4"]
+[gd_scene load_steps=8 format=3 uid="uid://cicyfp5xjvvu4"]
 
 [ext_resource type="Script" path="res://scenes/Tim.gd" id="1_g3k2b"]
 [ext_resource type="Texture2D" uid="uid://kq63ictuirhc" path="res://sprites/tim_side.png" id="1_saxit"]
@@ -11,6 +11,9 @@ size = Vector2(600, 200)
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_k2q2d"]
 size = Vector2(150, 50)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wmfel"]
+size = Vector2(100, 10000)
+
 [node name="Stage" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -18,10 +21,11 @@ scale = Vector2(1, 0.3)
 texture = SubResource("PlaceholderTexture2D_3hx6l")
 offset = Vector2(0, -100)
 
-[node name="Tim" type="Node2D" parent="." node_paths=PackedStringArray("boundary", "tim_sprite")]
+[node name="Tim" type="Node2D" parent="." node_paths=PackedStringArray("boundary", "tim_sprite", "transmitter_area")]
 script = ExtResource("1_g3k2b")
 boundary = NodePath("../Boundary")
 tim_sprite = NodePath("Sprite2D")
+transmitter_area = NodePath("Joke Transmitter/Area2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="Tim"]
 position = Vector2(-12, -142)
@@ -54,6 +58,13 @@ action = "joke_button_3"
 [node name="Sprite2D" type="Sprite2D" parent="Tim/Joke Buttons/Joke Button 3"]
 position = Vector2(150, -50)
 texture = SubResource("PlaceholderTexture2D_k2q2d")
+
+[node name="Joke Transmitter" type="Node2D" parent="Tim"]
+
+[node name="Area2D" type="Area2D" parent="Tim/Joke Transmitter"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tim/Joke Transmitter/Area2D"]
+shape = SubResource("RectangleShape2D_wmfel")
 
 [node name="Boundary" type="Node2D" parent="."]
 script = ExtResource("2_8p6ir")
