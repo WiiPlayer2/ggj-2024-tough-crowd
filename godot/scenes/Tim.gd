@@ -27,10 +27,19 @@ func _process(delta):
 			global_position = Vector2(boundary.get_most_left_position(), global_position.y)
 
 
-func _on_joke_button_button_pressed(joke):
+func _on_joke_button_button_pressed(joke: Joke):
+	stamina -= joke.required_stamina
+	
 	for body in transmitter_area.get_overlapping_bodies():
 		var person = body.find_parent("Person")
 		if not (person is AudienceMember):
 			continue
 		
 		person.on_joke(joke)
+		
+	
+	if stamina <= 0:
+		_on_stamina_empty()
+
+func _on_stamina_empty():
+	pass
