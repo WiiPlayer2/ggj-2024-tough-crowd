@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cicyfp5xjvvu4"]
+[gd_scene load_steps=6 format=3 uid="uid://cicyfp5xjvvu4"]
 
 [ext_resource type="Script" path="res://scenes/Tim.gd" id="1_g3k2b"]
 [ext_resource type="Texture2D" uid="uid://kq63ictuirhc" path="res://sprites/tim_side.png" id="1_saxit"]
@@ -6,6 +6,9 @@
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3hx6l"]
 size = Vector2(600, 200)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vwfks"]
+radius = 25.0
 
 [node name="Stage" type="Node2D"]
 
@@ -24,6 +27,12 @@ position = Vector2(-12, -142)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_saxit")
 offset = Vector2(0, 50)
+
+[node name="ThrowPoint" type="Area2D" parent="Tim"]
+position = Vector2(0, -148)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tim/ThrowPoint"]
+shape = SubResource("CircleShape2D_vwfks")
 
 [node name="Boundary" type="Node2D" parent="."]
 script = ExtResource("2_8p6ir")

@@ -6,6 +6,7 @@
 [node name="Crowd" type="Node2D"]
 position = Vector2(240, 232)
 script = ExtResource("1_y7wyj")
+max_persons = 1
 
 [node name="Tables" type="Node" parent="."]
 

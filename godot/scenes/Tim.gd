@@ -6,18 +6,18 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+    pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_pressed("move_right"):
-		tim_sprite.flip_h = true
-		global_position += Vector2.RIGHT * delta * move_speed
-		if global_position.x > boundary.get_most_right_position():
-			global_position = Vector2(boundary.get_most_right_position(), global_position.y)
-		
-	if Input.is_action_pressed("move_left"):
-		tim_sprite.flip_h = false
-		global_position += Vector2.LEFT * delta * move_speed
-		if global_position.x < boundary.get_most_left_position():
-			global_position = Vector2(boundary.get_most_left_position(), global_position.y)
+    if Input.is_action_pressed("move_right"):
+        tim_sprite.flip_h = true
+        global_position += Vector2.RIGHT * delta * move_speed
+        if global_position.x > boundary.get_most_right_position():
+            global_position = Vector2(boundary.get_most_right_position(), global_position.y)
+
+    if Input.is_action_pressed("move_left"):
+        tim_sprite.flip_h = false
+        global_position += Vector2.LEFT * delta * move_speed
+        if global_position.x < boundary.get_most_left_position():
+            global_position = Vector2(boundary.get_most_left_position(), global_position.y)

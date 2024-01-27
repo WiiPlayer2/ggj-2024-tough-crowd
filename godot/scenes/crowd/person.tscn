@@ -13,3 +13,8 @@ head = NodePath("Head")
 [node name="Head" type="Node2D" parent="."]
 position = Vector2(0, -16)
 scale = Vector2(0.3, 0.3)
+
+[node name="DebugTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="DebugTimer" to="." method="_on_debug_timer_timeout"]
