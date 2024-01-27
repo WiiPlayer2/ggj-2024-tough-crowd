@@ -31,3 +31,8 @@ angry_threshold = -3.0
 lashout_threshold = -10.0
 happiness_decay = 1.0
 lashout_decay = 10.0
+joke_mood_mapping = {
+0: 1.0,
+1: 0.0,
+2: -0.5
+}

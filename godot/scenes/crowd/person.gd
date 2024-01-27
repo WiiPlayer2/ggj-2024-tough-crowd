@@ -45,10 +45,6 @@ func _process(delta):
 		
 	update_expression()
 
-func hear_joke():
-	var change = randf_range(-3., 3.)
-	update_mood(change)
-	
 func update_mood(change: float):
 	if mood > profile.happy_threshold and change > 0 and laughter_left <= 0:
 		laughter_left = laughter_duration
@@ -76,4 +72,5 @@ func set_random_face():
 	head.add_child(face)
 
 func on_joke(joke: Joke):
-	pass
+	var mood_change = profile.joke_mood_mapping.get(joke.type, 0)
+	update_mood(mood_change)
