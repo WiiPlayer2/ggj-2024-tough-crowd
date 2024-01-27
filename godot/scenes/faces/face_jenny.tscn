@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://d2ssc4pyu363v"]
+
+[ext_resource type="Script" path="res://scenes/faces/face.gd" id="1_l3mwj"]
+[ext_resource type="Texture2D" uid="uid://dfo0nujuqaeek" path="res://sprites/faces/jenny_happy.svg" id="2_c2flt"]
+[ext_resource type="Texture2D" uid="uid://ckwbh5swm710" path="res://sprites/faces/jenny_laughing.svg" id="3_oyx01"]
+[ext_resource type="Texture2D" uid="uid://bw7i3n2re3ra7" path="res://sprites/faces/jenny_neutral.svg" id="4_cqtfu"]
+[ext_resource type="Texture2D" uid="uid://djixausmja6lq" path="res://sprites/faces/jenny_not_amused.svg" id="5_fvvlp"]
+
+[node name="FaceJenny" type="Node2D"]
+script = ExtResource("1_l3mwj")
+
+[node name="Happy" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("2_c2flt")
+
+[node name="Laugh" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("3_oyx01")
+
+[node name="Neutral" type="Sprite2D" parent="."]
+texture = ExtResource("4_cqtfu")
+
+[node name="Unhappy" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("5_fvvlp")
