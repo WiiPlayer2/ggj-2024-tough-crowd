@@ -10,7 +10,7 @@ func _ready():
 		var person_node = person.instantiate()
 		person_node.color = AudienceMember.get_random_color()
 		seat.add_child(person_node)
-		
+
 		counter += 1
 		if counter == max_persons:
 			break

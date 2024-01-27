@@ -84,6 +84,10 @@ func _process(delta):
 		mood -= profile.happiness_decay * delta
 	elif mood < profile.lashout_threshold * .9:
 		mood += profile.lashout_decay * delta
+	
+
+	if mood < profile.lashout_threshold:
+		throw_bottle()
 		
 	update_expression()
 
@@ -134,3 +138,11 @@ func set_random_face():
 func on_joke(joke: Joke):
 	var mood_change = profile.joke_mood_mapping.get(joke.type, 0)
 	update_mood(mood_change)
+
+func throw_bottle():
+	mood += 2.0
+
+	var bottle_scene = preload("res://scenes/objects/bottle.tscn")
+	var bottle = bottle_scene.instantiate()
+
+	add_child(bottle);
