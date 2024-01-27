@@ -16,8 +16,13 @@ var known_faces : Array[String] = [
 	# Add more scenes as needed
 ]
 
+const laughter_duration : float = 2. # seconds
+const laughter_bobs : int = 4
+var laughter_left : float = 0.
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	laughter_left = 0.
 	mood = randf_range(profile.lashout_threshold, profile.happy_threshold)
 	update_expression()
 	
@@ -26,23 +31,38 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if mood > profile.happy_threshold:
-		mood = max(mood - profile.happiness_decay * delta, profile.happy_threshold)
-	elif mood < profile.lashout_threshold:
-		mood = min(mood + profile.lashout_decay * delta, profile.lashout_threshold)
+	if laughter_left >= 0:
+		laughter_left -= delta
+	
+	if mood > profile.happy_threshold * .5:
+		mood -= profile.happiness_decay * delta
+	elif mood < profile.lashout_threshold * .9:
+		mood += profile.lashout_decay * delta
+		
+	if Input.is_key_pressed(KEY_SPACE) and OS.is_debug_build():
+		update_mood(1.)
+		
+	update_expression()
 
 func hear_joke():
 	var change = randf_range(-3., 3.)
 	update_mood(change)
 	
 func update_mood(change: float):
-	if mood > profile.happy_threshold and change > 0:
-		pass #toggle laugh
+	if mood > profile.happy_threshold and change > 0 and laughter_left <= 0:
+		laughter_left = laughter_duration
+		# bob head
+		var tween = get_tree().create_tween().bind_node(self).set_loops(laughter_bobs)
+		var bob_duration = laughter_duration / laughter_bobs / 2
+		tween.tween_property(face, "position", Vector2.UP * 20, bob_duration).set_delay(randf_range(0, bob_duration))
+		tween.tween_property(face, "position", Vector2.ZERO, bob_duration)
+		
 	mood += change
-	update_expression()
 
 func update_expression():
-	if mood > profile.happy_threshold:
+	if laughter_left > 0:
+		expression = "laugh"
+	elif mood > profile.happy_threshold:
 		expression = "happy"
 	elif mood < profile.angry_threshold:
 		expression = "angry"

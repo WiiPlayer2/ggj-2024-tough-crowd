@@ -31,6 +31,10 @@ func reset_face():
 		expression_map[expr].modulate = color_transparent.lerp(color_visible, expr == expression)
 
 func update_face(new_expression: String):
+	var trans_speed = expression_change_speed
+	if new_expression == "laugh":
+		trans_speed = 0
+	#var trans_speed = lerpf(0, expression_change_speed, new_expression != "laugh")
 	var tween = get_tree().create_tween().bind_node(self).set_parallel().set_trans(Tween.TRANS_LINEAR)
-	tween.tween_property(expression_map[expression], "modulate", color_transparent, expression_change_speed)
-	tween.tween_property(expression_map[new_expression], "modulate", color_visible, expression_change_speed)
+	tween.tween_property(expression_map[expression], "modulate", color_transparent, trans_speed)
+	tween.tween_property(expression_map[new_expression], "modulate", color_visible, trans_speed)
