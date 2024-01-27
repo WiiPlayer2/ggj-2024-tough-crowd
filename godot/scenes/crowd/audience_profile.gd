@@ -17,21 +17,21 @@ class ProfileData:
 		self.lashout_decay = lashout_decay
 		self.joke_mood_mapping = joke_mood_mapping
 
-@export var happy_threshold : float
-@export var angry_threshold : float
-@export var lashout_threshold : float
+var happy_threshold : float
+var angry_threshold : float
+var lashout_threshold : float
 
-@export var happiness_decay : float
-@export var lashout_decay : float
+var happiness_decay : float
+var lashout_decay : float
 
 # Maps JokeType (as int) to mood change (as float)
-@export var joke_mood_mapping: Dictionary
+var joke_mood_mapping: Dictionary
 
 static func get_profile_data(index) -> ProfileData:
 	var profiles = [
-		ProfileData.new(3, -3, -10, 1, 10, { 0: 1, 1: -0.25, 2: 0 }),
-		ProfileData.new(3, -3, -10, 1, 10, { 0: 0, 1: 1, 2: -0.25 }),
-		ProfileData.new(3, -3, -10, 1, 10, { 0: -0.25, 1: 0, 2: 1 }),
+		ProfileData.new(3, -3, -10, 0.1, 0.1, { 0: 1, 1: -0.25, 2: 0 }),
+		ProfileData.new(3, -3, -10, 0.1, 0.1, { 0: 0, 1: 1, 2: -0.25 }),
+		ProfileData.new(3, -3, -10, 0.1, 0.1, { 0: -0.25, 1: 0, 2: 1 }),
 	]
 	return profiles[index]
 
