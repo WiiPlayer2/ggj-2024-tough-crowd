@@ -103,7 +103,6 @@ texture = ExtResource("3_e1fvx")
 offset = Vector2(0, 50)
 
 [node name="Joke Buttons" type="Node2D" parent="Tim"]
-visible = false
 z_index = 120
 position = Vector2(0, -25)
 
