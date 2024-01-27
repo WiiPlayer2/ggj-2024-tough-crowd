@@ -2,18 +2,22 @@
 
 [ext_resource type="Script" path="res://scenes/crowd/person.gd" id="1_mx0i8"]
 [ext_resource type="Script" path="res://scenes/crowd/audience_profile.gd" id="2_bsodr"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kbo53"]
-size = Vector2(20, 30)
+[ext_resource type="Texture2D" uid="uid://dqxv2u4xiwiup" path="res://sprites/bodies/body_blue_2.svg" id="2_t0w5c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5rd5b"]
 
-[node name="Person" type="Sprite2D" node_paths=PackedStringArray("head", "profile")]
-texture = SubResource("PlaceholderTexture2D_kbo53")
+[node name="Person" type="Node2D" node_paths=PackedStringArray("head", "profile")]
 script = ExtResource("1_mx0i8")
 head = NodePath("Head")
 profile = NodePath("Profile")
 expression = 1
+
+[node name="Body" type="Node2D" parent="."]
+position = Vector2(0, 15)
+scale = Vector2(0.3, 0.3)
+
+[node name="BodyBlue2" type="Sprite2D" parent="Body"]
+texture = ExtResource("2_t0w5c")
 
 [node name="Head" type="Node2D" parent="."]
 position = Vector2(0, -16)

@@ -1,5 +1,5 @@
 class_name AudienceMember
-extends Sprite2D
+extends Node2D
 
 @export var mood : float = 0.
 
