@@ -1,7 +1,7 @@
 class_name Joke
 
 enum JokeType {
-	Joke1,
+	Joke1 = 0,
 	Joke2,
 	Joke3
 }

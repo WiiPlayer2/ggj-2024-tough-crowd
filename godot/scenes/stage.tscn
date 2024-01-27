@@ -34,13 +34,14 @@ offset = Vector2(0, 50)
 position = Vector2(0, -25)
 
 [node name="Joke Button 1" parent="Tim/Joke Buttons" instance=ExtResource("3_0t41i")]
+position = Vector2(0, -30)
 
 [node name="Joke Button 2" parent="Tim/Joke Buttons" instance=ExtResource("3_0t41i")]
-position = Vector2(-150, -50)
+position = Vector2(-100, -50)
 action = "joke_button_2"
 
 [node name="Joke Button 3" parent="Tim/Joke Buttons" instance=ExtResource("3_0t41i")]
-position = Vector2(150, -50)
+position = Vector2(100, -50)
 action = "joke_button_3"
 
 [node name="Joke Transmitter" type="Node2D" parent="Tim"]
@@ -52,3 +53,7 @@ shape = SubResource("RectangleShape2D_wmfel")
 
 [node name="Boundary" type="Node2D" parent="."]
 script = ExtResource("2_8p6ir")
+
+[connection signal="button_pressed" from="Tim/Joke Buttons/Joke Button 1" to="Tim" method="_on_joke_button_button_pressed"]
+[connection signal="button_pressed" from="Tim/Joke Buttons/Joke Button 2" to="Tim" method="_on_joke_button_button_pressed"]
+[connection signal="button_pressed" from="Tim/Joke Buttons/Joke Button 3" to="Tim" method="_on_joke_button_button_pressed"]
