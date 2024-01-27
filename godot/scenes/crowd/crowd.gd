@@ -1,8 +1,8 @@
 class_name Crowd
 extends Node2D
 
-@export_range(1, 16, 1)
-var max_persons = 16
+@export_range(1, 16, 1) var max_persons = 16
+
 
 var audience : Array[AudienceMember] = []
 var overall_mood : float = 0

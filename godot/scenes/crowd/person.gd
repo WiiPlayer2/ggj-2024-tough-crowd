@@ -54,7 +54,7 @@ func _map_color_to_profile_data_index(color):
 		"red":
 			return 2
 	return 0
-	
+
 static func get_random_color():
 	var keys = ["blue", "green", "red"]
 	return keys[randi() % keys.size()]
@@ -64,14 +64,14 @@ func _ready():
 	laughter_left = 0.
 	mood = randf_range(profile.lashout_threshold, profile.happy_threshold)
 	update_expression()
-	
+
 	var profile_index = _map_color_to_profile_data_index(color)
 	var profile_data = AudienceProfile.get_profile_data(profile_index)
 	profile.load_data(profile_data)
-	
+
 	if body_shape == null:
 		set_random_body(color)
-	
+
 	if face == null:
 		set_random_face()
 
@@ -79,16 +79,16 @@ func _ready():
 func _process(delta):
 	if laughter_left >= 0:
 		laughter_left -= delta
-	
+
 	if mood > profile.happy_threshold * .5:
 		mood -= profile.happiness_decay * delta
 	elif mood < profile.lashout_threshold * .9:
 		mood += profile.lashout_decay * delta
-	
+
 
 	if mood < profile.lashout_threshold:
 		throw_bottle()
-		
+
 	update_expression()
 
 func _input(event):
@@ -107,7 +107,7 @@ func update_mood(change: float):
 		var bob_duration = laughter_duration / laughter_bobs / 2
 		tween.tween_property(face, "position", Vector2.UP * 20, bob_duration).set_delay(randf_range(0, bob_duration))
 		tween.tween_property(face, "position", Vector2.ZERO, bob_duration)
-		
+
 	mood += change
 
 func update_expression():
@@ -119,7 +119,7 @@ func update_expression():
 		expression = "angry"
 	else:
 		expression = "neutral"
-		
+
 func set_random_body(for_color):
 	if str(for_color) not in known_bodies:
 		var keys = known_bodies.keys()

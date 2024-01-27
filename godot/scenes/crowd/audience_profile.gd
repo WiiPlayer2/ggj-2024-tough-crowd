@@ -1,6 +1,7 @@
 class_name AudienceProfile
 extends Node2D
 
+
 class ProfileData:
 	var happy_threshold: float
 	var angry_threshold: float
@@ -9,7 +10,14 @@ class ProfileData:
 	var lashout_decay: float
 	var joke_mood_mapping: Dictionary
 
-	func _init(happy_threshold, angry_threshold, lashout_threshold, happiness_decay, lashout_decay, joke_mood_mapping):
+	func _init(
+		happy_threshold,
+		angry_threshold,
+		lashout_threshold,
+		happiness_decay,
+		lashout_decay,
+		joke_mood_mapping
+	):
 		self.happy_threshold = happy_threshold
 		self.angry_threshold = angry_threshold
 		self.lashout_threshold = lashout_threshold
@@ -17,31 +25,36 @@ class ProfileData:
 		self.lashout_decay = lashout_decay
 		self.joke_mood_mapping = joke_mood_mapping
 
-var happy_threshold : float
-var angry_threshold : float
-var lashout_threshold : float
 
-var happiness_decay : float
-var lashout_decay : float
+var happy_threshold: float
+var angry_threshold: float
+var lashout_threshold: float
+
+var happiness_decay: float
+var lashout_decay: float
 
 # Maps JokeType (as int) to mood change (as float)
 var joke_mood_mapping: Dictionary
 
+
 static func get_profile_data(index) -> ProfileData:
 	var profiles = [
-		ProfileData.new(3, -3, -10, 0.1, 0.1, { 0: 1, 1: -0.25, 2: 0 }),
-		ProfileData.new(3, -3, -10, 0.1, 0.1, { 0: 0, 1: 1, 2: -0.25 }),
-		ProfileData.new(3, -3, -10, 0.1, 0.1, { 0: -0.25, 1: 0, 2: 1 }),
+		ProfileData.new(3, -3, -10, 0.1, 0.1, {0: 1, 1: -0.25, 2: 0}),
+		ProfileData.new(3, -3, -10, 0.1, 0.1, {0: 0, 1: 1, 2: -0.25}),
+		ProfileData.new(3, -3, -10, 0.1, 0.1, {0: -0.25, 1: 0, 2: 1}),
 	]
 	return profiles[index]
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass  # Replace with function body.
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
+
 
 func load_data(data: ProfileData):
 	happy_threshold = data.happy_threshold
