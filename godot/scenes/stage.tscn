@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cicyfp5xjvvu4"]
+[gd_scene load_steps=12 format=3 uid="uid://cicyfp5xjvvu4"]
 
 [ext_resource type="Texture2D" uid="uid://bg85if5rrrdmm" path="res://sprites/room/buehne.svg" id="1_32lst"]
 [ext_resource type="Script" path="res://scenes/Tim.gd" id="1_g3k2b"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scenes/Boundary.gd" id="2_8p6ir"]
 [ext_resource type="PackedScene" uid="uid://r1i7ln2hpwq5" path="res://scenes/joke_button.tscn" id="3_0t41i"]
 [ext_resource type="Script" path="res://scenes/DisplayStamina.gd" id="6_88orn"]
+[ext_resource type="FontFile" uid="uid://le2vdo2626vw" path="res://fonts/Montserrat-Medium.ttf" id="6_pb3a7"]
 [ext_resource type="Script" path="res://scenes/DisplayMood.gd" id="7_5m0td"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jfw8v"]
@@ -15,6 +16,7 @@ radius = 23.0217
 size = Vector2(250, 10000)
 
 [sub_resource type="LabelSettings" id="LabelSettings_aq472"]
+font = ExtResource("6_pb3a7")
 font_size = 32
 
 [node name="Stage" type="Node2D"]
