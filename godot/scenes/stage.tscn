@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://cicyfp5xjvvu4"]
+[gd_scene load_steps=7 format=3 uid="uid://cicyfp5xjvvu4"]
 
 [ext_resource type="Script" path="res://scenes/Tim.gd" id="1_g3k2b"]
 [ext_resource type="Texture2D" uid="uid://kq63ictuirhc" path="res://sprites/tim_side.png" id="1_saxit"]
 [ext_resource type="Script" path="res://scenes/Boundary.gd" id="2_8p6ir"]
+[ext_resource type="PackedScene" uid="uid://r1i7ln2hpwq5" path="res://scenes/joke_button.tscn" id="3_0t41i"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3hx6l"]
 size = Vector2(600, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wmfel"]
+size = Vector2(100, 10000)
 
 [node name="Stage" type="Node2D"]
 
@@ -14,10 +18,11 @@ scale = Vector2(1, 0.3)
 texture = SubResource("PlaceholderTexture2D_3hx6l")
 offset = Vector2(0, -100)
 
-[node name="Tim" type="Node2D" parent="." node_paths=PackedStringArray("boundary", "tim_sprite")]
+[node name="Tim" type="Node2D" parent="." node_paths=PackedStringArray("boundary", "tim_sprite", "transmitter_area")]
 script = ExtResource("1_g3k2b")
 boundary = NodePath("../Boundary")
 tim_sprite = NodePath("Sprite2D")
+transmitter_area = NodePath("Joke Transmitter/Area2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="Tim"]
 position = Vector2(-12, -142)
@@ -25,5 +30,30 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_saxit")
 offset = Vector2(0, 50)
 
+[node name="Joke Buttons" type="Node2D" parent="Tim"]
+position = Vector2(0, -25)
+
+[node name="Joke Button 1" parent="Tim/Joke Buttons" instance=ExtResource("3_0t41i")]
+position = Vector2(0, -30)
+
+[node name="Joke Button 2" parent="Tim/Joke Buttons" instance=ExtResource("3_0t41i")]
+position = Vector2(-100, -50)
+action = "joke_button_2"
+
+[node name="Joke Button 3" parent="Tim/Joke Buttons" instance=ExtResource("3_0t41i")]
+position = Vector2(100, -50)
+action = "joke_button_3"
+
+[node name="Joke Transmitter" type="Node2D" parent="Tim"]
+
+[node name="Area2D" type="Area2D" parent="Tim/Joke Transmitter"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tim/Joke Transmitter/Area2D"]
+shape = SubResource("RectangleShape2D_wmfel")
+
 [node name="Boundary" type="Node2D" parent="."]
 script = ExtResource("2_8p6ir")
+
+[connection signal="button_pressed" from="Tim/Joke Buttons/Joke Button 1" to="Tim" method="_on_joke_button_button_pressed"]
+[connection signal="button_pressed" from="Tim/Joke Buttons/Joke Button 2" to="Tim" method="_on_joke_button_button_pressed"]
+[connection signal="button_pressed" from="Tim/Joke Buttons/Joke Button 3" to="Tim" method="_on_joke_button_button_pressed"]

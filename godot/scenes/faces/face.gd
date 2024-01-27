@@ -1,38 +1,40 @@
 extends Node2D
 
-@export var mood : int = 0
-var last_mood : int = 0
+@export_enum("angry", "neutral", "happy", "laugh") var expression
 
-@export var sprite_happy : Sprite2D
-@export var sprite_neutral : Sprite2D
-@export var sprite_unhappy : Sprite2D
+var person_controller : AudienceMember
+var expression_map = {}
 
-const tween_speed : float = 1.5
+const expression_change_speed : float = 1.5
 const color_transparent : Color = Color(1, 1, 1, 0)
 const color_visible : Color = Color(1, 1, 1, 1)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	mood = 0
-	last_mood = 0
-	sprite_happy.modulate.a = 0
-	sprite_neutral.modulate.a = 1
-	sprite_unhappy.modulate.a = 0
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+	expression_map = {
+		"angry" : $Unhappy,
+		"neutral" : $Neutral,
+		"happy" : $Happy,
+		"laugh" : $Laugh,
+	}
+	person_controller = get_node("../../../Person")
+	expression = person_controller.expression
+	reset_face()
+	
 func _process(_delta):
-	if mood != last_mood:
-		var tween = get_tree().create_tween().bind_node(self).set_parallel().set_trans(Tween.TRANS_LINEAR)
-		if mood < 0:
-			tween.tween_property(sprite_unhappy, "modulate", color_visible, tween_speed)
-			tween.tween_property(sprite_neutral, "modulate", color_transparent, tween_speed)
-			tween.tween_property(sprite_happy, "modulate", color_transparent, tween_speed)
-		elif mood > 0:
-			tween.tween_property(sprite_unhappy, "modulate", color_transparent, tween_speed)
-			tween.tween_property(sprite_neutral, "modulate", color_transparent, tween_speed)
-			tween.tween_property(sprite_happy, "modulate", color_visible, tween_speed)
-		else:
-			tween.tween_property(sprite_unhappy, "modulate", color_transparent, tween_speed)
-			tween.tween_property(sprite_neutral, "modulate", color_visible, tween_speed)
-			tween.tween_property(sprite_happy, "modulate", color_transparent, tween_speed)
-		last_mood = mood
+	if expression != person_controller.expression:
+		update_face(person_controller.expression)
+		expression = person_controller.expression
+
+func reset_face():
+	for expr in expression_map:
+		expression_map[expr].modulate = color_transparent.lerp(color_visible, expr == expression)
+
+func update_face(new_expression: String):
+	var trans_speed = expression_change_speed
+	if new_expression == "laugh":
+		trans_speed = 0
+	#var trans_speed = lerpf(0, expression_change_speed, new_expression != "laugh")
+	var tween = get_tree().create_tween().bind_node(self).set_parallel().set_trans(Tween.TRANS_LINEAR)
+	tween.tween_property(expression_map[expression], "modulate", color_transparent, trans_speed)
+	tween.tween_property(expression_map[new_expression], "modulate", color_visible, trans_speed)

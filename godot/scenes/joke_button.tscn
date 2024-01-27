@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://r1i7ln2hpwq5"]
+
+[ext_resource type="Script" path="res://scenes/Joke Button.gd" id="1_lofpb"]
+[ext_resource type="Texture2D" uid="uid://br2j6yu0f7x37" path="res://sprites/room/bubble_blue.svg" id="2_ivsb5"]
+[ext_resource type="Texture2D" uid="uid://b2vtyqcfr5ukt" path="res://sprites/room/bubble_green.svg" id="3_26ki8"]
+[ext_resource type="Texture2D" uid="uid://03ch1nqrnm6c" path="res://sprites/room/bubble_red.svg" id="4_o1r21"]
+
+[node name="Joke Button" type="Node2D" node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_lofpb")
+action = "joke_button_1"
+sprite = NodePath("Sprite2D")
+type_sprites = Array[Texture2D]([ExtResource("2_ivsb5"), ExtResource("3_26ki8"), ExtResource("4_o1r21")])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ivsb5")
