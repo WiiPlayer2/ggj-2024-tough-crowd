@@ -22,7 +22,6 @@ visible = false
 
 [node name="Crowd" parent="." instance=ExtResource("4_aeh13")]
 position = Vector2(0, 0)
-max_persons = 16
 
 [node name="Stage" parent="." instance=ExtResource("5_borcq")]
 z_index = 10
