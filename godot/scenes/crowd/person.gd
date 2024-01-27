@@ -67,10 +67,15 @@ func _process(delta):
 	elif mood < profile.lashout_threshold * .9:
 		mood += profile.lashout_decay * delta
 		
-	if Input.is_key_pressed(KEY_SPACE) and OS.is_debug_build():
-		update_mood(1.)
-		
 	update_expression()
+
+func _input(event):
+	var just_pressed = event.is_pressed() and not event.is_echo()
+	if just_pressed and OS.is_debug_build():
+		if Input.is_key_pressed(KEY_SPACE):
+			update_mood(1.)
+		elif Input.is_key_pressed(KEY_ENTER):
+			update_mood(-1.)
 
 func hear_joke():
 	var change = randf_range(-3., 3.)
