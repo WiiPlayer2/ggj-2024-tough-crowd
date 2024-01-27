@@ -11,6 +11,7 @@ extends Sprite2D
 
 var known_faces : Array[String] = [
 	"res://scenes/faces/face_curly.tscn",
+	"res://scenes/faces/face_jenny.tscn",
 	"res://scenes/faces/face_moritz.tscn",
 	"res://scenes/faces/face_ronald.tscn",
 	# Add more scenes as needed

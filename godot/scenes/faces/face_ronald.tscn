@@ -1,16 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://cueulkc3lnk5c"]
+[gd_scene load_steps=6 format=3 uid="uid://cueulkc3lnk5c"]
 
 [ext_resource type="Script" path="res://scenes/faces/face.gd" id="1_8nd6f"]
 [ext_resource type="Texture2D" uid="uid://ctelqstn5ksh1" path="res://sprites/faces/ronald_happy.svg" id="2_512yk"]
 [ext_resource type="Texture2D" uid="uid://ijs3777dtv0n" path="res://sprites/faces/ronald_neutral.svg" id="3_ko187"]
 [ext_resource type="Texture2D" uid="uid://cn7dhkoupxvt8" path="res://sprites/faces/ronald_not_amused.svg" id="4_cf5hk"]
+[ext_resource type="Texture2D" uid="uid://deylqp2w3ydk5" path="res://sprites/faces/ronald_laughing.svg" id="5_kpy4k"]
 
-[node name="FaceCurly" type="Node2D" node_paths=PackedStringArray("sprite_laugh", "sprite_happy", "sprite_neutral", "sprite_unhappy")]
+[node name="FaceRonald" type="Node2D"]
 script = ExtResource("1_8nd6f")
-sprite_laugh = NodePath("Laugh")
-sprite_happy = NodePath("Happy")
-sprite_neutral = NodePath("Neutral")
-sprite_unhappy = NodePath("Unhappy")
 
 [node name="Happy" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -25,4 +22,4 @@ texture = ExtResource("4_cf5hk")
 
 [node name="Laugh" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
-texture = ExtResource("2_512yk")
+texture = ExtResource("5_kpy4k")
