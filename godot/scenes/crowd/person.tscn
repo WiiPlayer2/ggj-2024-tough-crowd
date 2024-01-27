@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cl4fax7fbh2g7"]
+[gd_scene load_steps=5 format=3 uid="uid://cl4fax7fbh2g7"]
 
 [ext_resource type="Script" path="res://scenes/crowd/person.gd" id="1_mx0i8"]
 [ext_resource type="Script" path="res://scenes/crowd/audience_profile.gd" id="2_bsodr"]

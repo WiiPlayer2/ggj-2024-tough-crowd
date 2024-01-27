@@ -27,7 +27,7 @@ func _process(delta):
 func _on_joke_button_button_pressed(joke):
 	for body in transmitter_area.get_overlapping_bodies():
 		var person = body.find_parent("Person")
-		if not (person is Person):
+		if not (person is AudienceMember):
 			continue
 		
 		person.on_joke(joke)
