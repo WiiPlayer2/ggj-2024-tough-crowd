@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://ijs3777dtv0n" path="res://sprites/faces/ronald_neutral.svg" id="3_ko187"]
 [ext_resource type="Texture2D" uid="uid://cn7dhkoupxvt8" path="res://sprites/faces/ronald_not_amused.svg" id="4_cf5hk"]
 
-[node name="FaceCurly" type="Node2D" node_paths=PackedStringArray("sprite_happy", "sprite_neutral", "sprite_unhappy")]
+[node name="FaceCurly" type="Node2D" node_paths=PackedStringArray("sprite_laugh", "sprite_happy", "sprite_neutral", "sprite_unhappy")]
 script = ExtResource("1_8nd6f")
+sprite_laugh = NodePath("Laugh")
 sprite_happy = NodePath("Happy")
 sprite_neutral = NodePath("Neutral")
 sprite_unhappy = NodePath("Unhappy")
@@ -21,3 +22,7 @@ texture = ExtResource("3_ko187")
 [node name="Unhappy" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
 texture = ExtResource("4_cf5hk")
+
+[node name="Laugh" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("2_512yk")
