@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://cicyfp5xjvvu4"]
+[gd_scene load_steps=7 format=3 uid="uid://cicyfp5xjvvu4"]
 
 [ext_resource type="Script" path="res://scenes/Tim.gd" id="1_g3k2b"]
 [ext_resource type="Texture2D" uid="uid://kq63ictuirhc" path="res://sprites/tim_side.png" id="1_saxit"]
 [ext_resource type="Script" path="res://scenes/Boundary.gd" id="2_8p6ir"]
+[ext_resource type="Script" path="res://scenes/Joke Button.gd" id="3_opgtx"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3hx6l"]
 size = Vector2(600, 200)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_k2q2d"]
+size = Vector2(150, 50)
 
 [node name="Stage" type="Node2D"]
 
@@ -24,6 +28,29 @@ position = Vector2(-12, -142)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_saxit")
 offset = Vector2(0, 50)
+
+[node name="Joke Buttons" type="Node2D" parent="Tim"]
+position = Vector2(0, -25)
+
+[node name="Joke Button 1" type="Node2D" parent="Tim/Joke Buttons"]
+script = ExtResource("3_opgtx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Tim/Joke Buttons/Joke Button 1"]
+texture = SubResource("PlaceholderTexture2D_k2q2d")
+
+[node name="Joke Button 2" type="Node2D" parent="Tim/Joke Buttons"]
+script = ExtResource("3_opgtx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Tim/Joke Buttons/Joke Button 2"]
+position = Vector2(-150, -50)
+texture = SubResource("PlaceholderTexture2D_k2q2d")
+
+[node name="Joke Button 3" type="Node2D" parent="Tim/Joke Buttons"]
+script = ExtResource("3_opgtx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Tim/Joke Buttons/Joke Button 3"]
+position = Vector2(150, -50)
+texture = SubResource("PlaceholderTexture2D_k2q2d")
 
 [node name="Boundary" type="Node2D" parent="."]
 script = ExtResource("2_8p6ir")
