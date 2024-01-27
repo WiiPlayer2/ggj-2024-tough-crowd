@@ -1,15 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://cl4fax7fbh2g7"]
+[gd_scene load_steps=4 format=3 uid="uid://cl4fax7fbh2g7"]
 
 [ext_resource type="Script" path="res://scenes/crowd/person.gd" id="1_mx0i8"]
+[ext_resource type="Script" path="res://scenes/crowd/audience_profile.gd" id="2_bsodr"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kbo53"]
 size = Vector2(20, 30)
 
-[node name="Person" type="Sprite2D" node_paths=PackedStringArray("head")]
+[node name="Person" type="Sprite2D" node_paths=PackedStringArray("head", "profile")]
 texture = SubResource("PlaceholderTexture2D_kbo53")
 script = ExtResource("1_mx0i8")
 head = NodePath("Head")
+profile = NodePath("Profile")
+expression = 1
 
 [node name="Head" type="Node2D" parent="."]
 position = Vector2(0, -16)
 scale = Vector2(0.3, 0.3)
+
+[node name="Profile" type="Node2D" parent="."]
+script = ExtResource("2_bsodr")
+happy_threshold = 3.0
+angry_threshold = -3.0
+lashout_threshold = -10.0
+happiness_decay = 1.0
+lashout_decay = 10.0
