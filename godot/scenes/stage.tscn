@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cicyfp5xjvvu4"]
+[gd_scene load_steps=9 format=3 uid="uid://cicyfp5xjvvu4"]
 
 [ext_resource type="Texture2D" uid="uid://bg85if5rrrdmm" path="res://sprites/room/buehne.svg" id="1_32lst"]
 [ext_resource type="Script" path="res://scenes/Tim.gd" id="1_g3k2b"]
@@ -11,6 +11,9 @@ radius = 23.0217
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wmfel"]
 size = Vector2(250, 10000)
+
+[sub_resource type="LabelSettings" id="LabelSettings_aq472"]
+font_size = 32
 
 [node name="Stage" type="Node2D"]
 z_index = 100
@@ -66,6 +69,30 @@ shape = SubResource("RectangleShape2D_wmfel")
 
 [node name="Boundary" type="Node2D" parent="."]
 script = ExtResource("2_8p6ir")
+
+[node name="DisplayGUI" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Stamina" type="Label" parent="DisplayGUI"]
+offset_right = 80.0
+offset_bottom = 46.0
+text = "100"
+label_settings = SubResource("LabelSettings_aq472")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mood" type="Label" parent="DisplayGUI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -170.0
+offset_right = -10.0
+offset_bottom = 46.0
+grow_horizontal = 0
+text = "0"
+label_settings = SubResource("LabelSettings_aq472")
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [connection signal="button_pressed" from="Tim/Joke Buttons/Joke Button 1" to="Tim" method="_on_joke_button_button_pressed"]
 [connection signal="button_pressed" from="Tim/Joke Buttons/Joke Button 2" to="Tim" method="_on_joke_button_button_pressed"]
