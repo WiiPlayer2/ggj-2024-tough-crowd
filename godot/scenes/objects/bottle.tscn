@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c5f5v1wtottyp"]
 
 [ext_resource type="Script" path="res://scenes/objects/bottle.gd" id="1_87ktq"]
-[ext_resource type="Texture2D" uid="uid://cow4dd0hlxrgr" path="res://sprites/room/bottle.svg" id="1_uea7l"]
+[ext_resource type="Texture2D" uid="uid://bavsg3hu7pccy" path="res://sprites/room/bottle.svg" id="1_uea7l"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p8qcj"]
 radius = 22.4893

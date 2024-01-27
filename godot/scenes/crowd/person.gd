@@ -125,9 +125,9 @@ func on_joke(joke: Joke):
 	pass
 	
 func throw_bottle():
-    mood += 2.0
+	mood += 2.0
 
-    var bottle_scene = preload("res://scenes/objects/bottle.tscn")
-    var bottle = bottle_scene.instantiate()
+	var bottle_scene = preload("res://scenes/objects/bottle.tscn")
+	var bottle = bottle_scene.instantiate()
 
-    add_child(bottle);
+	add_child(bottle);
