@@ -6,5 +6,7 @@ enum JokeType {
 	Joke3
 }
 
+var type: JokeType
+
 func _init(type):
 	self.type = type

@@ -21,3 +21,7 @@ func _process(delta):
 		global_position += Vector2.LEFT * delta * move_speed
 		if global_position.x < boundary.get_most_left_position():
 			global_position = Vector2(boundary.get_most_left_position(), global_position.y)
+
+
+func _on_joke_button_button_pressed(joke):
+	pass # Replace with function body.

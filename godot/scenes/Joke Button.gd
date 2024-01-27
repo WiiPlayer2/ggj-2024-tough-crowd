@@ -1,6 +1,6 @@
 extends Node2D
 
-signal button_pressed
+signal button_pressed(joke)
 
 @export_enum("joke_button_1", "joke_button_2", "joke_button_3") var action: String
 
@@ -16,4 +16,4 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed(action):
-		emit_signal("button_pressed", current_joke)
+		button_pressed.emit(current_joke)
