@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="12.930628mm"
+   height="3.6490631mm"
+   viewBox="0 0 12.930628 3.6490631"
+   version="1.1"
+   id="svg674"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="´tim_side.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview676"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="4.2683933"
+     inkscape:cx="85.980829"
+     inkscape:cy="484.02287"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid1241" />
+  </sodipodi:namedview>
+  <defs
+     id="defs671" />
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(16.981257,-141.62449)">
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.529167"
+       d="m -16.732716,142.06972 c 0.572271,1.56771 0.693327,2.60166 1.741265,2.62987 1.047937,0.0282 0.362548,-2.66157 1.848467,-2.8052 1.485918,-0.14362 0.346703,2.58575 1.393956,2.8052 1.047248,0.21945 1.39044,-2.94614 2.4515877,-2.8052 1.061148,0.14094 0.4266616,2.60964 1.4630447,2.76137 1.0363831,0.15173 1.3519483,-2.88768 2.4120469,-2.62988 1.0600987,0.2578 1.1071691,3.24351 1.1071691,3.24351"
+       id="path19610"
+       sodipodi:nodetypes="czzzzzzc" />
+  </g>
+</svg>
