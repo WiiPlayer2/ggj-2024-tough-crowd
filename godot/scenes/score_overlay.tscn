@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://b0xc4jjyahlvk"]
+[gd_scene load_steps=2 format=3 uid="uid://b0xc4jjyahlvk"]
+
+[ext_resource type="Script" path="res://scenes/score_overlay.gd" id="1_8s0ln"]
 
 [node name="ScoreOverlay" type="CenterContainer"]
 process_mode = 2
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8s0ln")
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -35,7 +38,7 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="MainMenuButton" type="Button" parent="VBoxContainer3/MenuContainer"]
+[node name="NewGameButton" type="Button" parent="VBoxContainer3/MenuContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 2

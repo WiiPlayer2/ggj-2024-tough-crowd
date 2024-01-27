@@ -42,4 +42,16 @@ func _on_joke_button_button_pressed(joke: Joke):
 		_on_stamina_empty()
 
 func _on_stamina_empty():
-	pass
+	get_node("../DisplayGUI").visible = false
+	
+	var fade = get_node("/root/IngameScene/UI/FadeOverlay")
+	fade.modulate.a = fade.minimum_opacity
+	fade.visible = true
+	
+	get_viewport().set_input_as_handled()
+	get_tree().paused = true
+	
+	var score_overlay = get_node("/root/IngameScene/UI/ScoreOverlay")
+	score_overlay.get_node("VBoxContainer3/FinalScore").text = str(int(get_node("/root/IngameScene/Crowd").overall_mood))
+	score_overlay.grab_button_focus()
+	score_overlay.visible = true
