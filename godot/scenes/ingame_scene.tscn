@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cik30de5gaaah"]
+[gd_scene load_steps=7 format=3 uid="uid://cik30de5gaaah"]
 
 [ext_resource type="Script" path="res://scenes/ingame_scene.gd" id="1_objyc"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_y6ebv"]
 [ext_resource type="PackedScene" uid="uid://jyv4g54adkmo" path="res://ui/overlays/pause_overlay.tscn" id="3_8o178"]
+[ext_resource type="PackedScene" uid="uid://b0xc4jjyahlvk" path="res://scenes/score_overlay.tscn" id="3_yvlw3"]
 [ext_resource type="PackedScene" uid="uid://bx6htkgx23t8v" path="res://scenes/crowd/crowd.tscn" id="4_aeh13"]
 [ext_resource type="PackedScene" uid="uid://cicyfp5xjvvu4" path="res://scenes/stage.tscn" id="5_borcq"]
 
@@ -15,63 +16,20 @@ script = ExtResource("1_objyc")
 unique_name_in_owner = true
 visible = false
 
+[node name="ScoreOverlay" parent="UI" instance=ExtResource("3_yvlw3")]
+unique_name_in_owner = true
+visible = false
+
 [node name="PauseOverlay" parent="UI" instance=ExtResource("3_8o178")]
 unique_name_in_owner = true
 process_mode = 2
 visible = false
 
-[node name="ScoreOverlay" type="CenterContainer" parent="UI"]
-unique_name_in_owner = true
-process_mode = 2
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer3" type="VBoxContainer" parent="UI/ScoreOverlay"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="UI/ScoreOverlay/VBoxContainer3"]
-layout_mode = 2
-theme_type_variation = &"HeaderLarge"
-text = "game_over"
-horizontal_alignment = 1
-
-[node name="LabelScore" type="Label" parent="UI/ScoreOverlay/VBoxContainer3"]
-layout_mode = 2
-theme_type_variation = &"HeaderLarge"
-text = "your_score"
-horizontal_alignment = 1
-
-[node name="FinalScore" type="Label" parent="UI/ScoreOverlay/VBoxContainer3"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_type_variation = &"HeaderLarge"
-text = "100"
-horizontal_alignment = 1
-
-[node name="MenuContainer" type="VBoxContainer" parent="UI/ScoreOverlay/VBoxContainer3"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_constants/separation = 8
-
-[node name="MainMenuButton" type="Button" parent="UI/ScoreOverlay/VBoxContainer3/MenuContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(180, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-text = "new_game"
-
-[node name="ExitButton" type="Button" parent="UI/ScoreOverlay/VBoxContainer3/MenuContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "leave_game"
-
 [node name="Crowd" parent="." instance=ExtResource("4_aeh13")]
+visible = false
 position = Vector2(0, 0)
 
 [node name="Stage" parent="." instance=ExtResource("5_borcq")]
+visible = false
 z_index = 10
 position = Vector2(291, 346)
