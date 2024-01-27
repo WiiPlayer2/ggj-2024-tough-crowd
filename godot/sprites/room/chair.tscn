@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbehbuw5lvfkr"]
+
+[ext_resource type="Texture2D" uid="uid://dy3y1wvowh72r" path="res://sprites/room/chair.svg" id="1_17hl8"]
+
+[node name="Chair" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 15)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_17hl8")

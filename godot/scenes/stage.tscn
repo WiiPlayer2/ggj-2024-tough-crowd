@@ -1,12 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://cicyfp5xjvvu4"]
 
+[ext_resource type="Texture2D" uid="uid://bg85if5rrrdmm" path="res://sprites/room/buehne.svg" id="1_32lst"]
 [ext_resource type="Script" path="res://scenes/Tim.gd" id="1_g3k2b"]
 [ext_resource type="Texture2D" uid="uid://kq63ictuirhc" path="res://sprites/tim_side.png" id="1_saxit"]
 [ext_resource type="Script" path="res://scenes/Boundary.gd" id="2_8p6ir"]
 [ext_resource type="PackedScene" uid="uid://r1i7ln2hpwq5" path="res://scenes/joke_button.tscn" id="3_0t41i"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3hx6l"]
-size = Vector2(600, 200)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jfw8v"]
 radius = 23.0217
@@ -19,8 +17,9 @@ z_index = 100
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 100
-scale = Vector2(1, 0.3)
-texture = SubResource("PlaceholderTexture2D_3hx6l")
+position = Vector2(-2, 43)
+scale = Vector2(1, 0.7)
+texture = ExtResource("1_32lst")
 offset = Vector2(0, -100)
 
 [node name="Tim" type="Node2D" parent="." node_paths=PackedStringArray("boundary", "tim_sprite", "transmitter_area")]

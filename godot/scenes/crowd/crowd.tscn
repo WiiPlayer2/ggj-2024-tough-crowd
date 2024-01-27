@@ -1,10 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bx6htkgx23t8v"]
+[gd_scene load_steps=4 format=3 uid="uid://bx6htkgx23t8v"]
 
 [ext_resource type="Script" path="res://scenes/crowd/crowd.gd" id="1_y7wyj"]
-[ext_resource type="Texture2D" uid="uid://b6p145ne8x013" path="res://sprites/room/table.svg" id="2_yuiyq"]
-[ext_resource type="Texture2D" uid="uid://dy3y1wvowh72r" path="res://sprites/room/chair.svg" id="3_1657p"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mfqpb"]
+[ext_resource type="Texture2D" uid="uid://b6p145ne8x013" path="res://sprites/room/table.svg" id="2_bax5s"]
+[ext_resource type="PackedScene" uid="uid://bbehbuw5lvfkr" path="res://sprites/room/chair.tscn" id="3_y4hpm"]
 
 [node name="Crowd" type="Node2D"]
 position = Vector2(240, 232)
@@ -14,171 +12,122 @@ script = ExtResource("1_y7wyj")
 
 [node name="Table_1" type="Sprite2D" parent="Tables"]
 z_index = 35
-material = SubResource("CanvasItemMaterial_mfqpb")
 position = Vector2(170, 199)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_yuiyq")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_bax5s")
 
 [node name="Table_2" type="Sprite2D" parent="Tables"]
 z_index = 25
 position = Vector2(359, 138)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_yuiyq")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_bax5s")
 
 [node name="Table_3" type="Sprite2D" parent="Tables"]
 z_index = 15
 position = Vector2(203, 84)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_yuiyq")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_bax5s")
 
 [node name="Table_4" type="Sprite2D" parent="Tables"]
 z_index = 45
 position = Vector2(319, 230)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_yuiyq")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_bax5s")
 
 [node name="Seats" type="Node" parent="."]
 
-[node name="Seat_1" type="Node2D" parent="Seats"]
-position = Vector2(168, 156)
-
-[node name="Sprite2D" type="Sprite2D" parent="Seats/Seat_1"]
-z_index = -5
-position = Vector2(0, 10)
-scale = Vector2(0.26, 0.26)
-texture = ExtResource("3_1657p")
-
-[node name="Seat_10" type="Node2D" parent="Seats"]
-position = Vector2(311, 137)
-
-[node name="Sprite2D" type="Sprite2D" parent="Seats/Seat_10"]
-z_index = -5
-position = Vector2(0, 10)
-scale = Vector2(0.26, 0.26)
-texture = ExtResource("3_1657p")
-
-[node name="Seat_7" type="Node2D" parent="Seats"]
-position = Vector2(249, 81)
-
-[node name="Sprite2D" type="Sprite2D" parent="Seats/Seat_7"]
-z_index = -5
-position = Vector2(0, 10)
-scale = Vector2(-0.26, 0.26)
-texture = ExtResource("3_1657p")
-
-[node name="Seat_16" type="Node2D" parent="Seats"]
-position = Vector2(320, 274)
-
-[node name="Sprite2D" type="Sprite2D" parent="Seats/Seat_16"]
-z_index = -5
-position = Vector2(0, 10)
-scale = Vector2(0.26, 0.26)
-texture = ExtResource("3_1657p")
-
 [node name="Seat_5" type="Node2D" parent="Seats"]
+z_index = 10
 position = Vector2(205, 35)
 
-[node name="Sprite2D" type="Sprite2D" parent="Seats/Seat_5"]
-z_index = -5
-position = Vector2(0, 10)
-scale = Vector2(0.26, 0.26)
-texture = ExtResource("3_1657p")
-
-[node name="Seat_12" type="Node2D" parent="Seats"]
-position = Vector2(359, 184)
-
-[node name="Sprite2D" type="Sprite2D" parent="Seats/Seat_12"]
-z_index = -5
-position = Vector2(0, 10)
-scale = Vector2(-0.26, 0.26)
-texture = ExtResource("3_1657p")
-
-[node name="Seat_8" type="Node2D" parent="Seats"]
-position = Vector2(204, 130)
-
-[node name="Sprite2D" type="Sprite2D" parent="Seats/Seat_8"]
-z_index = -5
-position = Vector2(0, 10)
-scale = Vector2(0.26, 0.26)
-texture = ExtResource("3_1657p")
-
-[node name="Seat_13" type="Node2D" parent="Seats"]
-position = Vector2(315, 187)
-
-[node name="Sprite2D" type="Sprite2D" parent="Seats/Seat_13"]
-z_index = -5
-position = Vector2(0, 10)
-scale = Vector2(-0.26, 0.26)
-texture = ExtResource("3_1657p")
-
-[node name="Seat_2" type="Node2D" parent="Seats"]
-position = Vector2(122, 197)
-
-[node name="Sprite2D" type="Sprite2D" parent="Seats/Seat_2"]
-z_index = -5
-position = Vector2(0, 10)
-scale = Vector2(0.26, 0.26)
-texture = ExtResource("3_1657p")
-
-[node name="Seat_3" type="Node2D" parent="Seats"]
-position = Vector2(217, 199)
-
-[node name="Sprite2D" type="Sprite2D" parent="Seats/Seat_3"]
-z_index = -5
-position = Vector2(0, 10)
-scale = Vector2(-0.26, 0.26)
-texture = ExtResource("3_1657p")
-
-[node name="Seat_15" type="Node2D" parent="Seats"]
-position = Vector2(366, 231)
-
-[node name="Sprite2D" type="Sprite2D" parent="Seats/Seat_15"]
-z_index = -5
-position = Vector2(0, 10)
-scale = Vector2(-0.26, 0.26)
-texture = ExtResource("3_1657p")
-
-[node name="Seat_4" type="Node2D" parent="Seats"]
-position = Vector2(166, 244)
-
-[node name="Sprite2D" type="Sprite2D" parent="Seats/Seat_4"]
-z_index = -5
-position = Vector2(0, 10)
-scale = Vector2(0.26, 0.26)
-texture = ExtResource("3_1657p")
-
-[node name="Seat_9" type="Node2D" parent="Seats"]
-position = Vector2(359, 94)
-
-[node name="Sprite2D" type="Sprite2D" parent="Seats/Seat_9"]
-z_index = -5
-position = Vector2(0, 10)
-scale = Vector2(-0.26, 0.26)
-texture = ExtResource("3_1657p")
-
-[node name="Seat_14" type="Node2D" parent="Seats"]
-position = Vector2(276, 232)
-
-[node name="Sprite2D" type="Sprite2D" parent="Seats/Seat_14"]
-z_index = -5
-position = Vector2(0, 10)
-scale = Vector2(0.26, 0.26)
-texture = ExtResource("3_1657p")
+[node name="Chair" parent="Seats/Seat_5" instance=ExtResource("3_y4hpm")]
 
 [node name="Seat_6" type="Node2D" parent="Seats"]
+z_index = 12
 position = Vector2(159, 79)
 
-[node name="Sprite2D" type="Sprite2D" parent="Seats/Seat_6"]
-z_index = -5
-position = Vector2(0, 10)
-scale = Vector2(0.26, 0.26)
-texture = ExtResource("3_1657p")
+[node name="Chair" parent="Seats/Seat_6" instance=ExtResource("3_y4hpm")]
+
+[node name="Seat_7" type="Node2D" parent="Seats"]
+z_index = 13
+position = Vector2(249, 81)
+
+[node name="Chair" parent="Seats/Seat_7" instance=ExtResource("3_y4hpm")]
+
+[node name="Seat_8" type="Node2D" parent="Seats"]
+z_index = 17
+position = Vector2(204, 130)
+
+[node name="Chair" parent="Seats/Seat_8" instance=ExtResource("3_y4hpm")]
+
+[node name="Seat_9" type="Node2D" parent="Seats"]
+z_index = 20
+position = Vector2(359, 94)
+
+[node name="Chair" parent="Seats/Seat_9" instance=ExtResource("3_y4hpm")]
+
+[node name="Seat_10" type="Node2D" parent="Seats"]
+z_index = 22
+position = Vector2(311, 137)
+
+[node name="Chair" parent="Seats/Seat_10" instance=ExtResource("3_y4hpm")]
 
 [node name="Seat_11" type="Node2D" parent="Seats"]
+z_index = 23
 position = Vector2(401, 133)
 
-[node name="Sprite2D" type="Sprite2D" parent="Seats/Seat_11"]
-z_index = -5
-position = Vector2(0, 10)
-scale = Vector2(-0.26, 0.26)
-texture = ExtResource("3_1657p")
+[node name="Chair" parent="Seats/Seat_11" instance=ExtResource("3_y4hpm")]
+
+[node name="Seat_12" type="Node2D" parent="Seats"]
+z_index = 26
+position = Vector2(359, 184)
+
+[node name="Chair" parent="Seats/Seat_12" instance=ExtResource("3_y4hpm")]
+
+[node name="Seat_1" type="Node2D" parent="Seats"]
+z_index = 30
+position = Vector2(168, 156)
+
+[node name="Chair" parent="Seats/Seat_1" instance=ExtResource("3_y4hpm")]
+
+[node name="Seat_2" type="Node2D" parent="Seats"]
+z_index = 32
+position = Vector2(122, 197)
+
+[node name="Chair" parent="Seats/Seat_2" instance=ExtResource("3_y4hpm")]
+
+[node name="Seat_3" type="Node2D" parent="Seats"]
+z_index = 33
+position = Vector2(217, 199)
+
+[node name="Chair" parent="Seats/Seat_3" instance=ExtResource("3_y4hpm")]
+
+[node name="Seat_4" type="Node2D" parent="Seats"]
+z_index = 36
+position = Vector2(166, 244)
+
+[node name="Chair" parent="Seats/Seat_4" instance=ExtResource("3_y4hpm")]
+
+[node name="Seat_13" type="Node2D" parent="Seats"]
+z_index = 40
+position = Vector2(315, 187)
+
+[node name="Chair" parent="Seats/Seat_13" instance=ExtResource("3_y4hpm")]
+
+[node name="Seat_14" type="Node2D" parent="Seats"]
+z_index = 42
+position = Vector2(276, 232)
+
+[node name="Chair" parent="Seats/Seat_14" instance=ExtResource("3_y4hpm")]
+
+[node name="Seat_15" type="Node2D" parent="Seats"]
+z_index = 43
+position = Vector2(366, 231)
+
+[node name="Chair" parent="Seats/Seat_15" instance=ExtResource("3_y4hpm")]
+
+[node name="Seat_16" type="Node2D" parent="Seats"]
+z_index = 46
+position = Vector2(320, 274)
+
+[node name="Chair" parent="Seats/Seat_16" instance=ExtResource("3_y4hpm")]
