@@ -12,8 +12,10 @@ size = Vector2(600, 200)
 size = Vector2(100, 10000)
 
 [node name="Stage" type="Node2D"]
+z_index = 100
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 100
 scale = Vector2(1, 0.3)
 texture = SubResource("PlaceholderTexture2D_3hx6l")
 offset = Vector2(0, -100)
@@ -25,12 +27,14 @@ tim_sprite = NodePath("Sprite2D")
 transmitter_area = NodePath("Joke Transmitter/Area2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="Tim"]
+z_index = 110
 position = Vector2(-12, -142)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_saxit")
 offset = Vector2(0, 50)
 
 [node name="Joke Buttons" type="Node2D" parent="Tim"]
+z_index = 120
 position = Vector2(0, -25)
 
 [node name="Joke Button 1" parent="Tim/Joke Buttons" instance=ExtResource("3_0t41i")]
