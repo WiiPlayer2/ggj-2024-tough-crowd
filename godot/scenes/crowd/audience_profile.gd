@@ -29,9 +29,9 @@ class ProfileData:
 
 static func get_profile_data(index) -> ProfileData:
 	var profiles = [
-		ProfileData.new(3, -3, -10, 1, 10, { 0: 1, 1: 0, 2: -0.5 }),
-		ProfileData.new(3, -3, -10, 1, 10, { 0: -0.5, 1: 1, 2: 0 }),
-		ProfileData.new(3, -3, -10, 1, 10, { 0: 0, 1: -0.5, 2: 1 }),
+		ProfileData.new(3, -3, -10, 1, 10, { 0: 1, 1: -0.25, 2: 0 }),
+		ProfileData.new(3, -3, -10, 1, 10, { 0: 0, 1: 1, 2: -0.25 }),
+		ProfileData.new(3, -3, -10, 1, 10, { 0: -0.25, 1: 0, 2: 1 }),
 	]
 	return profiles[index]
 

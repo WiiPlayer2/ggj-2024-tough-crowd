@@ -47,9 +47,9 @@ var laughter_left : float = 0.
 
 func _map_color_to_profile_data_index(color):
 	match color:
-		"blue":
-			return 0
 		"green":
+			return 0
+		"blue":
 			return 1
 		"red":
 			return 2

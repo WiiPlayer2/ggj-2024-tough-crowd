@@ -9,7 +9,7 @@
 size = Vector2(600, 200)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wmfel"]
-size = Vector2(100, 10000)
+size = Vector2(250, 10000)
 
 [node name="Stage" type="Node2D"]
 z_index = 100
