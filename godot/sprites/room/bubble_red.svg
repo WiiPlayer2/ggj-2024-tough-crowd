@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="22.454374mm"
+   height="8.8210449mm"
+   viewBox="0 0 22.454374 8.8210449"
+   version="1.1"
+   id="svg674"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="´tim_side.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview676"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="4.2683933"
+     inkscape:cx="85.980829"
+     inkscape:cy="484.02287"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid1241" />
+  </sodipodi:namedview>
+  <defs
+     id="defs671" />
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(18.665293,-165.77067)">
+    <path
+       style="fill:#ff5557;fill-opacity:1;stroke:none;stroke-width:0.529167"
+       d="m -18.584415,169.80195 c 0.233468,-1.33391 1.225464,-2.72839 2.62987,-3.33117 1.404406,-0.60278 12.7538208,-1.08514 14.5519476,-0.26299 1.79812683,0.82215 2.9079958,3.50335 2.8051948,5.08442 -0.102801,1.58107 -0.015795,2.22764 -2.19155843,2.98052 -2.17576317,0.75288 -15.33926797,0.0437 -16.56818197,-0.78896 -1.228914,-0.83263 -1.46074,-2.34791 -1.227272,-3.68182 z"
+       id="path24737"
+       sodipodi:nodetypes="zzzzzzz" />
+    <path
+       style="fill:#ff5557;fill-opacity:1;stroke-width:0.529167"
+       d="m 0.60586929,169.15209 3.18321341,4.81267 -6.6945565,-1.04214 z"
+       id="path24739"
+       sodipodi:nodetypes="cccc" />
+  </g>
+</svg>
