@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://r1i7ln2hpwq5"]
+
+[ext_resource type="Script" path="res://scenes/Joke Button.gd" id="1_lofpb"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_k2q2d"]
+size = Vector2(150, 50)
+
+[node name="Joke Button 1" type="Node2D"]
+script = ExtResource("1_lofpb")
+action = "joke_button_1"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_k2q2d")
