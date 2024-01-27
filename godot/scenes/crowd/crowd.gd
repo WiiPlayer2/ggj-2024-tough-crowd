@@ -1,7 +1,7 @@
 extends Node2D
 
-@export_range(1, 16, 1)
-var max_persons = 16
+@export_range(1, 16, 1) var max_persons = 16
+
 
 func _ready():
 	var counter = 0
