@@ -45,11 +45,29 @@ const laughter_duration : float = 2. # seconds
 const laughter_bobs : int = 4
 var laughter_left : float = 0.
 
+func _map_color_to_profile_data_index(color):
+	match color:
+		"blue":
+			return 0
+		"green":
+			return 1
+		"red":
+			return 2
+	return 0
+	
+static func get_random_color():
+	var keys = ["blue", "green", "red"]
+	return keys[randi() % keys.size()]
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	laughter_left = 0.
 	mood = randf_range(profile.lashout_threshold, profile.happy_threshold)
 	update_expression()
+	
+	var profile_index = _map_color_to_profile_data_index(color)
+	var profile_data = AudienceProfile.get_profile_data(profile_index)
+	profile.load_data(profile_data)
 	
 	if body_shape == null:
 		set_random_body(color)

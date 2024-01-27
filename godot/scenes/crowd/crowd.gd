@@ -7,7 +7,9 @@ func _ready():
 	var counter = 0
 	var person = preload("res://scenes/crowd/person.tscn")
 	for seat in $Seats.get_children():
-		seat.add_child(person.instantiate())
+		var person_node = person.instantiate()
+		person_node.color = AudienceMember.get_random_color()
+		seat.add_child(person_node)
 		
 		counter += 1
 		if counter == max_persons:
