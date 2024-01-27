@@ -1,9 +1,12 @@
+class_name Comedian
 extends Node2D
 
 @export var move_speed = 100
 @export var boundary: Boundary
 @export var tim_sprite : Sprite2D
 @export var transmitter_area: Area2D
+
+@export var stamina : int = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
