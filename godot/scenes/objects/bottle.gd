@@ -10,6 +10,12 @@ var is_hidding: bool
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	tim_global_position = get_node("/root/IngameScene/Stage/Tim/ThrowPoint").global_position
+	tim_global_position += _random_inside_unit_circle() * 23
+	rotation_degrees += randf() * 360
+
+func _random_inside_unit_circle() -> Vector2:
+	var theta : float = randf() * 2 * PI
+	return Vector2(cos(theta), sin(theta)) * sqrt(randf())
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
