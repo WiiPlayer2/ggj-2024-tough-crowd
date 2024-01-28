@@ -44,7 +44,7 @@ func _on_joke_button_button_pressed(joke: Joke):
 	last_joke = joke
 	stamina -= joke.required_stamina
 	_disable_buttons()
-	_start_joke_for_audience(false)
+	_start_joke_for_audience()
 	$AnimationPlayer.play("talking")
 
 func _get_targeted_audience_members(target_all: bool):
@@ -65,13 +65,17 @@ func _get_targeted_audience_members_in_target_area() -> Array[AudienceMember]:
 		arr.append(person)
 	return arr
 
-func _start_joke_for_audience(target_all: bool):
-	for person in _get_targeted_audience_members(target_all):
+func _start_joke_for_audience():
+	for person in _get_targeted_audience_members(true):
 		person.on_joke_start()
 
-func _finish_joke_for_audience(joke: Joke, target_all: bool):
+func _tell_joke_for_audience(joke: Joke, target_all: bool):
 	for person in _get_targeted_audience_members(target_all):
-		person.on_joke_finish(joke)
+		person.on_hear_joke(joke)
+
+func _finish_joke_for_audience():
+	for person in _get_targeted_audience_members(true):
+		person.on_joke_finish()
 
 func _on_stamina_empty():
 	get_node("../DisplayGUI").visible = false
@@ -92,13 +96,15 @@ func _on_stamina_empty():
 
 func ouch():
 	$Sprite2D.texture = ducking_texture
-	_start_joke_for_audience(true)
+	_start_joke_for_audience()
 	await get_tree().create_timer(1).timeout
 	$Sprite2D.texture = default_texture
-	_finish_joke_for_audience(Joke.get_bottle_joke(), true)
+	_tell_joke_for_audience(Joke.get_bottle_joke(), true)
+	_finish_joke_for_audience()
 
 func _on_animation_player_animation_finished(anim_name):
-	_finish_joke_for_audience(last_joke, false)
+	_tell_joke_for_audience(last_joke, false)
+	_finish_joke_for_audience()
 	if stamina <= 0:
 		_on_stamina_empty()
 	else:

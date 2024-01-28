@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/crowd/crowd.gd" id="1_y7wyj"]
 [ext_resource type="Texture2D" uid="uid://b6p145ne8x013" path="res://sprites/room/table.svg" id="2_bax5s"]
-[ext_resource type="PackedScene" uid="uid://bbehbuw5lvfkr" path="res://sprites/room/chair.tscn" id="3_y4hpm"]
+[ext_resource type="PackedScene" path="res://sprites/room/chair.tscn" id="3_y4hpm"]
 
 [node name="Crowd" type="Node2D"]
 position = Vector2(240, 232)
@@ -131,3 +131,7 @@ z_index = 46
 position = Vector2(237, 15)
 
 [node name="Chair" parent="Seats/Seat_16" instance=ExtResource("3_y4hpm")]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+show_behind_parent = true
+color = Color(0.494118, 0.494118, 0.494118, 1)
