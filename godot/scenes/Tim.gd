@@ -70,6 +70,7 @@ func _on_stamina_empty():
 	var fade = get_node("/root/IngameScene/UI/FadeOverlay")
 	fade.modulate.a = fade.minimum_opacity
 	fade.visible = true
+	get_node("/root/IngameScene/UI/Curtain").visible = true
 	
 	get_viewport().set_input_as_handled()
 	get_tree().paused = true
