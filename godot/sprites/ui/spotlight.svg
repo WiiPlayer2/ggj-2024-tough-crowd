@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="250.00002"
+   height="1000.0001"
+   viewBox="0 0 66.145836 264.58335"
+   version="1.1"
+   id="svg1"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient1">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop3" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0.10467289"
+         id="stop1" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.9372549;"
+         offset="0.90093458"
+         id="stop4" />
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="1"
+         id="stop2" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#linearGradient1"
+       id="linearGradient2"
+       x1="-0.56500155"
+       y1="132.57417"
+       x2="66.145836"
+       y2="132.57417"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0.28250201,-0.28251351)" />
+  </defs>
+  <g
+     id="layer1">
+    <rect
+       style="fill:url(#linearGradient2);fill-opacity:1;stroke:none;stroke-width:0.565"
+       id="rect1"
+       width="66.145836"
+       height="264.58334"
+       x="0"
+       y="0" />
+  </g>
+</svg>

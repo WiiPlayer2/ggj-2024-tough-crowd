@@ -3,9 +3,9 @@ extends Node2D
 
 @export_range(1, 16, 1) var max_persons = 16
 
+var audience: Array[AudienceMember] = []
+var overall_mood: float = 0
 
-var audience : Array[AudienceMember] = []
-var overall_mood : float = 0
 
 func _ready():
 	var counter = 0
@@ -19,6 +19,7 @@ func _ready():
 		counter += 1
 		if counter == max_persons:
 			break
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
