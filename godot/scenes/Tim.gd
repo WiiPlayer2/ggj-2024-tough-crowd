@@ -44,10 +44,19 @@ func _on_joke_button_button_pressed(joke: Joke):
 	last_joke = joke
 	stamina -= joke.required_stamina
 	_disable_buttons()
-	_start_joke_for_audience()
+	_start_joke_for_audience(false)
 	$AnimationPlayer.play("talking")
 
-func _get_targeted_audience_members() -> Array[AudienceMember]:
+func _get_targeted_audience_members(target_all: bool):
+	if target_all:
+		return _get_all_targeted_audience_members()
+	return _get_targeted_audience_members_in_target_area()
+
+func _get_all_targeted_audience_members() -> Array[AudienceMember]:
+	var crowd = get_node("/root/IngameScene/Crowd")
+	return crowd.audience
+
+func _get_targeted_audience_members_in_target_area() -> Array[AudienceMember]:
 	var arr: Array[AudienceMember]
 	for body in transmitter_area.get_overlapping_bodies():
 		var person = body.find_parent("Person")
@@ -56,12 +65,12 @@ func _get_targeted_audience_members() -> Array[AudienceMember]:
 		arr.append(person)
 	return arr
 
-func _start_joke_for_audience():
-	for person in _get_targeted_audience_members():
+func _start_joke_for_audience(target_all: bool):
+	for person in _get_targeted_audience_members(target_all):
 		person.on_joke_start()
 
-func _finish_joke_for_audience(joke: Joke):
-	for person in _get_targeted_audience_members():
+func _finish_joke_for_audience(joke: Joke, target_all: bool):
+	for person in _get_targeted_audience_members(target_all):
 		person.on_joke_finish(joke)
 
 func _on_stamina_empty():
@@ -83,11 +92,13 @@ func _on_stamina_empty():
 
 func ouch():
 	$Sprite2D.texture = ducking_texture
+	_start_joke_for_audience(true)
 	await get_tree().create_timer(1).timeout
 	$Sprite2D.texture = default_texture
+	_finish_joke_for_audience(Joke.get_bottle_joke(), true)
 
 func _on_animation_player_animation_finished(anim_name):
-	_finish_joke_for_audience(last_joke)
+	_finish_joke_for_audience(last_joke, false)
 	if stamina <= 0:
 		_on_stamina_empty()
 	else:
