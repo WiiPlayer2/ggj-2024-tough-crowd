@@ -142,7 +142,7 @@ func on_joke_start():
 	is_listening = true
 
 func on_hear_joke(joke: Joke):
-	var mood_change = profile.joke_mood_mapping.get(joke.type, 0)
+	var mood_change = profile.joke_mood_mapping.get(joke.type, 0) * joke.effectiveness
 	if joke.type == last_joke_heard:
 		mood_change = min(0, mood_change)
 	update_mood(mood_change)
