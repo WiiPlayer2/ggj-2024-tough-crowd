@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cik30de5gaaah"]
+[gd_scene load_steps=8 format=3 uid="uid://cik30de5gaaah"]
 
 [ext_resource type="Script" path="res://scenes/ingame_scene.gd" id="1_objyc"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_y6ebv"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b0xc4jjyahlvk" path="res://scenes/score_overlay.tscn" id="3_yvlw3"]
 [ext_resource type="PackedScene" uid="uid://bx6htkgx23t8v" path="res://scenes/crowd/crowd.tscn" id="4_aeh13"]
 [ext_resource type="PackedScene" uid="uid://cicyfp5xjvvu4" path="res://scenes/stage.tscn" id="5_borcq"]
+[ext_resource type="Texture2D" uid="uid://c8nhtntxhrfaq" path="res://sprites/room/curtain.svg" id="5_ykdj2"]
 
 [node name="IngameScene" type="Node2D"]
 script = ExtResource("1_objyc")
@@ -22,6 +23,23 @@ position = Vector2(291, 346)
 [node name="FadeOverlay" parent="UI" instance=ExtResource("1_y6ebv")]
 unique_name_in_owner = true
 visible = false
+
+[node name="Curtain" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/Curtain"]
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 324.0
+texture = ExtResource("5_ykdj2")
+expand_mode = 2
+stretch_mode = 4
 
 [node name="ScoreOverlay" parent="UI" instance=ExtResource("3_yvlw3")]
 unique_name_in_owner = true
