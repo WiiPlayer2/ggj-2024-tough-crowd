@@ -2,18 +2,18 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="21.194174mm"
-   height="9.8156738mm"
-   viewBox="0 0 21.194174 9.8156738"
+   width="17.197918mm"
+   height="13.758331mm"
+   viewBox="0 0 17.197918 13.758331"
    version="1.1"
    id="svg674"
    inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
    sodipodi:docname="´tim_side.svg"
+   xml:space="preserve"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
      id="namedview676"
      pagecolor="#ffffff"
      bordercolor="#000000"
@@ -25,34 +25,38 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="4.2683933"
-     inkscape:cx="85.980829"
-     inkscape:cy="484.02287"
+     inkscape:cx="-36.430569"
+     inkscape:cy="662.54438"
      inkscape:window-width="1920"
      inkscape:window-height="1027"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1">
-    <inkscape:grid
+     inkscape:current-layer="layer1"
+     showguides="true"><inkscape:grid
        type="xygrid"
-       id="grid1241" />
-  </sodipodi:namedview>
-  <defs
-     id="defs671" />
-  <g
+       id="grid1241" /></sodipodi:namedview><defs
+     id="defs671" /><g
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(19.070675,-179.83929)">
-    <path
-       style="fill:#3771c8;fill-opacity:1;stroke:none;stroke-width:0.529167"
-       d="m -19.022727,184.70454 c 0.297855,-1.62486 -0.05765,-2.7375 2.717533,-3.9448 2.775182,-1.2073 11.1976259,-1.27647 13.7629863,0.0877 2.56536039,1.36413 2.71218066,1.914 2.5422077,3.76948 -0.16997296,1.85548 -0.35415366,4.58461 -2.7175324,4.90909 -2.3633787,0.32449 -10.4324306,-0.0275 -12.9740256,-0.35065 -2.541595,-0.32317 -3.629024,-2.84592 -3.331169,-4.47078 z"
-       id="path25465"
-       sodipodi:nodetypes="zzzzzzz" />
-    <path
-       style="fill:#3771c8;fill-opacity:1;stroke-width:0.529167"
-       d="m -0.09542941,184.05468 2.21892781,4.81267 -6.6945565,-1.04214 z"
-       id="path25536"
-       sodipodi:nodetypes="cccc" />
-  </g>
-</svg>
+     transform="translate(18.353236,-167.62332)"><rect
+       style="fill:none;fill-opacity:1;stroke:none;stroke-width:0.264582;stroke-dasharray:none"
+       id="rect34959"
+       width="17.197916"
+       height="13.758333"
+       x="-18.353235"
+       y="167.62331" /><g
+       id="g34965"
+       transform="translate(-0.55787967,-10.256507)"><path
+         style="fill:#3771c8;fill-opacity:1;stroke:none;stroke-width:0.529167"
+         d="m -16.307595,184.95249 c 0.221567,-1.62486 -0.04289,-2.7375 2.021513,-3.9448 2.064396,-1.2073 8.3296661,-1.27647 10.2379812,0.0877 1.9083149,1.36413 2.0175312,1.914 1.8910921,3.76948 -0.1264391,1.85548 -0.2634471,4.58461 -2.0215123,4.90909 -1.7580653,0.32449 -7.760455,-0.0275 -9.651091,-0.35065 -1.890637,-0.32317 -2.699552,-2.84592 -2.477983,-4.47078 z"
+         id="path34961"
+         sodipodi:nodetypes="zzzzzzz"
+         inkscape:export-filename="2024\tough_crowd\godot\sprites\room\bubble_blue.svg"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" /><path
+         style="fill:#3771c8;fill-opacity:1;stroke-width:0.529167"
+         d="m -7.1025449,181.06274 6.25419632,-1.08953 -3.29825102,5.91816 z"
+         id="path34963"
+         sodipodi:nodetypes="cccc" /></g></g></svg>

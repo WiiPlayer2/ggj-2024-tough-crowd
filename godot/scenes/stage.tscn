@@ -15,7 +15,7 @@
 radius = 23.0217
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wmfel"]
-size = Vector2(250, 10000)
+size = Vector2(150, 10000)
 
 [sub_resource type="Animation" id="Animation_n0bwh"]
 length = 0.001
@@ -112,11 +112,11 @@ position = Vector2(0, -25)
 position = Vector2(0, -30)
 
 [node name="Joke Button 2" parent="Tim/Joke Buttons" instance=ExtResource("3_0t41i")]
-position = Vector2(-100, -50)
+position = Vector2(-70, -50)
 action = "joke_button_2"
 
 [node name="Joke Button 3" parent="Tim/Joke Buttons" instance=ExtResource("3_0t41i")]
-position = Vector2(100, -50)
+position = Vector2(60, -50)
 action = "joke_button_3"
 
 [node name="Joke Transmitter" type="Node2D" parent="Tim"]
@@ -133,6 +133,7 @@ libraries = {
 
 [node name="Boundary" type="Node2D" parent="."]
 script = ExtResource("2_8p6ir")
+width = 400.0
 
 [node name="DisplayGUI" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
