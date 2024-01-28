@@ -4,8 +4,6 @@ signal button_pressed(joke)
 
 @export_enum("joke_button_1", "joke_button_2", "joke_button_3") var action: String
 @export var sprite: Sprite2D
-
-@export var stamina_categories: Array[int]
 @export var type_sprites: Array[Texture2D]
 
 var stamina_label: RichTextLabel
