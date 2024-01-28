@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b4blrdjthcxnn"]
 
-[ext_resource type="Texture2D" uid="uid://chjyf8v4hhkok" path="res://sprites/title_tough_crowd.png" id="1_h65iv"]
+[ext_resource type="Texture2D" uid="uid://bjw0tkgm1xw4g" path="res://sprites/title_tough_crowd.svg" id="1_h65iv"]
 
 [node name="GameLogo" type="CenterContainer"]
 offset_right = 879.0

@@ -16,52 +16,52 @@ var is_listening : bool = false
 var last_joke_heard : Joke.JokeType = -1
 
 var known_faces : Array[String] = [
-    "res://scenes/faces/face_curly.tscn",
-    "res://scenes/faces/face_jenny.tscn",
-    "res://scenes/faces/face_moritz.tscn",
-    "res://scenes/faces/face_ronald.tscn",
-    # Add more scenes as needed
+	"res://scenes/faces/face_curly.tscn",
+	"res://scenes/faces/face_jenny.tscn",
+	"res://scenes/faces/face_moritz.tscn",
+	"res://scenes/faces/face_ronald.tscn",
+	# Add more scenes as needed
 ]
 
 var known_bodies = {
-    "blue" : [
-        "res://scenes/bodies/body_blue_1.tscn",
-        "res://scenes/bodies/body_blue_2.tscn",
-        "res://scenes/bodies/body_blue_3.tscn",
-        # Add more scenes as needed
-    ],
-    "green" : [
-        "res://scenes/bodies/body_green_1.tscn",
-        "res://scenes/bodies/body_green_2.tscn",
-        "res://scenes/bodies/body_green_3.tscn",
-        # Add more scenes as needed
-    ],
-    "red" : [
-        "res://scenes/bodies/body_red_1.tscn",
-        "res://scenes/bodies/body_red_2.tscn",
-        "res://scenes/bodies/body_red_3.tscn",
-        # Add more scenes as needed
-    ],
+	"blue" : [
+		"res://scenes/bodies/body_blue_1.tscn",
+		"res://scenes/bodies/body_blue_2.tscn",
+		"res://scenes/bodies/body_blue_3.tscn",
+		# Add more scenes as needed
+	],
+	"green" : [
+		"res://scenes/bodies/body_green_1.tscn",
+		"res://scenes/bodies/body_green_2.tscn",
+		"res://scenes/bodies/body_green_3.tscn",
+		# Add more scenes as needed
+	],
+	"red" : [
+		"res://scenes/bodies/body_red_1.tscn",
+		"res://scenes/bodies/body_red_2.tscn",
+		"res://scenes/bodies/body_red_3.tscn",
+		# Add more scenes as needed
+	],
 }
 
 var buh_sounds = [
-    preload("res://audio/buh_1.wav"),
-    preload("res://audio/buh_2.wav"),
-    preload("res://audio/buh_3.wav"),
-    preload("res://audio/buh_4.wav"),
+	preload("res://audio/buh_1.wav"),
+	preload("res://audio/buh_2.wav"),
+	preload("res://audio/buh_3.wav"),
+	preload("res://audio/buh_4.wav"),
 ]
 
 var laugh_sounds = [
-    preload("res://audio/haha_1.wav"),
-    preload("res://audio/haha_2.wav"),
-    preload("res://audio/haha_3.wav"),
-    preload("res://audio/haha_4.wav"),
+	preload("res://audio/haha_1.wav"),
+	preload("res://audio/haha_2.wav"),
+	preload("res://audio/haha_3.wav"),
+	preload("res://audio/haha_4.wav"),
 ]
 
 var cough_sounds = [
-    preload("res://audio/cough_1.wav"),
-    preload("res://audio/cough_2.wav"),
-    preload("res://audio/cough_3.wav"),
+	preload("res://audio/cough_1.wav"),
+	preload("res://audio/cough_2.wav"),
+	preload("res://audio/cough_3.wav"),
 ]
 
 const laughter_duration : float = 2. # seconds
@@ -69,66 +69,66 @@ const laughter_bobs : int = 4
 var laughter_left : float = 0.
 
 func _map_color_to_profile_data_index(color):
-    match color:
-        "green":
-            return 0
-        "blue":
-            return 1
-        "red":
-            return 2
-    return 0
+	match color:
+		"green":
+			return 0
+		"blue":
+			return 1
+		"red":
+			return 2
+	return 0
 
 static func get_random_color():
-    var keys = ["blue", "green", "red"]
-    return keys[randi() % keys.size()]
+	var keys = ["blue", "green", "red"]
+	return keys[randi() % keys.size()]
 
 func get_random_cough():
-    return cough_sounds[randi() % cough_sounds.size()]
+	return cough_sounds[randi() % cough_sounds.size()]
 
 func get_random_buh():
-    return buh_sounds[randi() % buh_sounds.size()]
+	return buh_sounds[randi() % buh_sounds.size()]
 
 func get_random_laugh():
-    return laugh_sounds[randi() % laugh_sounds.size()]
+	return laugh_sounds[randi() % laugh_sounds.size()]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-    laughter_left = 0.
-    mood = randf_range(profile.lashout_threshold, profile.happy_threshold)
-    update_expression()
+	laughter_left = 0.
+	mood = randf_range(profile.lashout_threshold, profile.happy_threshold)
+	update_expression()
 
-    var profile_index = _map_color_to_profile_data_index(color)
-    var profile_data = AudienceProfile.get_profile_data(profile_index)
-    profile.load_data(profile_data)
+	var profile_index = _map_color_to_profile_data_index(color)
+	var profile_data = AudienceProfile.get_profile_data(profile_index)
+	profile.load_data(profile_data)
 
-    if body_shape == null:
-        set_random_body(color)
+	if body_shape == null:
+		set_random_body(color)
 
-    if face == null:
-        set_random_face()
+	if face == null:
+		set_random_face()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-    if laughter_left >= 0:
-        laughter_left -= delta
+	if laughter_left >= 0:
+		laughter_left -= delta
 
 	if not is_listening and mood > profile.happy_threshold * .9:
 		mood -= profile.happiness_decay * delta
 	elif not is_listening and mood < profile.lashout_threshold * .9:
 		mood += profile.lashout_decay * delta
 
-    if mood < profile.lashout_threshold:
-        throw_bottle()
+	if mood < profile.lashout_threshold:
+		throw_bottle()
 
-    update_expression()
+	update_expression()
 
 func _input(event):
-    var just_pressed = event.is_pressed() and not event.is_echo()
-    if just_pressed and OS.is_debug_build():
-        if Input.is_key_pressed(KEY_SPACE):
-            update_mood(1.)
-        elif Input.is_key_pressed(KEY_ENTER):
-            update_mood(-1.)
+	var just_pressed = event.is_pressed() and not event.is_echo()
+	if just_pressed and OS.is_debug_build():
+		if Input.is_key_pressed(KEY_SPACE):
+			update_mood(1.)
+		elif Input.is_key_pressed(KEY_ENTER):
+			update_mood(-1.)
 
 func update_mood(change: float):
 	if laughter_left <= 0 and change > 0 and (mood + change) > profile.happy_threshold :
@@ -139,45 +139,45 @@ func update_mood(change: float):
 		tween.tween_property(face, "position", Vector2.UP * 20, bob_duration).set_delay(randf_range(0, bob_duration))
 		tween.tween_property(face, "position", Vector2.ZERO, bob_duration)
 
-        $Speaker.stream = get_random_laugh()
-        $Speaker.play()
+		$Speaker.stream = get_random_laugh()
+		$Speaker.play()
 
-        tween.tween_property(face, "position", Vector2.UP * 20, bob_duration).set_delay(randf_range(0, bob_duration))
-        tween.tween_property(face, "position", Vector2.ZERO, bob_duration)
+		tween.tween_property(face, "position", Vector2.UP * 20, bob_duration).set_delay(randf_range(0, bob_duration))
+		tween.tween_property(face, "position", Vector2.ZERO, bob_duration)
 
-    mood += change
+	mood += change
 
 func update_expression():
-    if laughter_left > 0:
-        expression = "laugh"
-    elif mood > profile.happy_threshold:
-        expression = "happy"
-    elif mood < profile.angry_threshold:
-        expression = "angry"
-    else:
-        expression = "neutral"
+	if laughter_left > 0:
+		expression = "laugh"
+	elif mood > profile.happy_threshold:
+		expression = "happy"
+	elif mood < profile.angry_threshold:
+		expression = "angry"
+	else:
+		expression = "neutral"
 
-    if randi() % 25000 == 1:
-        $Speaker.stream = get_random_cough()
-        $Speaker.play()
+	if randi() % 25000 == 1:
+		$Speaker.stream = get_random_cough()
+		$Speaker.play()
 
 func set_random_body(for_color):
-    if str(for_color) not in known_bodies:
-        var keys = known_bodies.keys()
-        for_color = keys[randi() % keys.size()]
-        print(keys.size())
-    var body_path = known_bodies[for_color][randi() % known_bodies[for_color].size()]
-    var body_res = load(body_path)
-    body_shape = body_res.instantiate()
-    body.add_child(body_shape)
+	if str(for_color) not in known_bodies:
+		var keys = known_bodies.keys()
+		for_color = keys[randi() % keys.size()]
+		print(keys.size())
+	var body_path = known_bodies[for_color][randi() % known_bodies[for_color].size()]
+	var body_res = load(body_path)
+	body_shape = body_res.instantiate()
+	body.add_child(body_shape)
 
 func set_random_face():
-    var face_res = load(known_faces[randi() % known_faces.size()])
-    face = face_res.instantiate()
-    head.add_child(face)
+	var face_res = load(known_faces[randi() % known_faces.size()])
+	face = face_res.instantiate()
+	head.add_child(face)
 
 func on_joke_start():
-    is_listening = true
+	is_listening = true
 
 func on_hear_joke(joke: Joke):
 	var mood_change = profile.joke_mood_mapping.get(joke.type, 0) * joke.effectiveness
@@ -187,15 +187,15 @@ func on_hear_joke(joke: Joke):
 	last_joke_heard = joke.type
 
 func on_joke_finish():
-    is_listening = false
+	is_listening = false
 
 func throw_bottle():
 	mood = profile.lashout_threshold * 0.99
 
-    $Speaker.stream = get_random_buh()
-    $Speaker.play()
+	$Speaker.stream = get_random_buh()
+	$Speaker.play()
 
-    var bottle_scene = preload("res://scenes/objects/bottle.tscn")
-    var bottle = bottle_scene.instantiate()
+	var bottle_scene = preload("res://scenes/objects/bottle.tscn")
+	var bottle = bottle_scene.instantiate()
 
-    add_child(bottle);
+	add_child(bottle);
