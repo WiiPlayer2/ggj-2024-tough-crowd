@@ -24,4 +24,4 @@ func _ready():
 func _process(_delta):
 	overall_mood = 0
 	for m in audience:
-		overall_mood += m.mood
+		overall_mood += m.mood * 10
