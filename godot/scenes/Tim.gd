@@ -9,7 +9,7 @@ extends Node2D
 
 var default_texture: Texture2D = load("res://sprites/tim_side.png")
 var ducking_texture: Texture2D = load("res://sprites/tim_ducking.svg")
-
+var last_joke: Joke
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -41,15 +41,16 @@ func _enable_buttons():
 	$"Joke Buttons".process_mode = Node.PROCESS_MODE_INHERIT
 
 func _on_joke_button_button_pressed(joke: Joke):
-	$AnimationPlayer.play("talking")
-	_disable_buttons()
+	last_joke = joke
 	stamina -= joke.required_stamina
+	_disable_buttons()
+	$AnimationPlayer.play("talking")
 
+func _tell_joke_to_audience(joke: Joke):
 	for body in transmitter_area.get_overlapping_bodies():
 		var person = body.find_parent("Person")
 		if not (person is AudienceMember):
 			continue
-
 		person.on_joke(joke)
 
 func _on_stamina_empty():
@@ -74,6 +75,7 @@ func ouch():
 	$Sprite2D.texture = default_texture
 
 func _on_animation_player_animation_finished(anim_name):
+	_tell_joke_to_audience(last_joke)
 	if stamina <= 0:
 		_on_stamina_empty()
 	else:
