@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b4blrdjthcxnn"]
 
-[ext_resource type="Texture2D" uid="uid://dmelj2qgr8w7k" path="res://icon.svg" id="1_scjn5"]
+[ext_resource type="Texture2D" uid="uid://bjw0tkgm1xw4g" path="res://sprites/title_tough_crowd.svg" id="1_ehg6o"]
 
 [node name="GameLogo" type="CenterContainer"]
 offset_right = 110.0
@@ -15,4 +15,4 @@ theme_override_constants/margin_bottom = 10
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer"]
 layout_mode = 2
-texture = ExtResource("1_scjn5")
+texture = ExtResource("1_ehg6o")
