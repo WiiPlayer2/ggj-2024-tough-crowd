@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsbpdd7xdslx0"]
+
+[ext_resource type="Script" path="res://scenes/tutorial.gd" id="1_i8rpu"]
+[ext_resource type="PackedScene" uid="uid://cik30de5gaaah" path="res://scenes/ingame_scene.tscn" id="2_lch8g"]
+
+[node name="Tutorial" type="Node2D"]
+script = ExtResource("1_i8rpu")
+next_scene = ExtResource("2_lch8g")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+offset_right = 576.0
+offset_bottom = 325.0
+ratio = 1.6306
+
+[node name="VSplitContainer" type="VSplitContainer" parent="AspectRatioContainer"]
+layout_mode = 2
+split_offset = 270
+dragger_visibility = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="AspectRatioContainer/VSplitContainer"]
+layout_mode = 2
+text = "Can YOU please the crowd?
+
+Throw out jokes but be aware that not every joke is for everyone.
+Can you please everyone before you run out of breath?"
+
+[node name="CenterContainer" type="CenterContainer" parent="AspectRatioContainer/VSplitContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AspectRatioContainer/VSplitContainer/CenterContainer"]
+layout_mode = 2
+text = "I'm ready for the show!"
+
+[connection signal="pressed" from="AspectRatioContainer/VSplitContainer/CenterContainer/Button" to="." method="_on_button_pressed"]

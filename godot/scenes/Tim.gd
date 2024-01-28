@@ -15,9 +15,11 @@ var ducking_texture: Texture2D = load("res://sprites/tim_ducking.svg")
 func _ready():
 	Signals.hit_tim.connect(ouch)
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if $AnimationPlayer.is_playing():
+		return
+
 	if Input.is_action_pressed("move_right"):
 		tim_sprite.flip_h = true
 		global_position += Vector2.RIGHT * delta * move_speed
@@ -30,9 +32,17 @@ func _process(delta):
 		if global_position.x < boundary.get_most_left_position():
 			global_position = Vector2(boundary.get_most_left_position(), global_position.y)
 
+func _disable_buttons():
+	$"Joke Buttons".hide()
+	$"Joke Buttons".process_mode = Node.PROCESS_MODE_DISABLED
+
+func _enable_buttons():
+	$"Joke Buttons".show()
+	$"Joke Buttons".process_mode = Node.PROCESS_MODE_INHERIT
 
 func _on_joke_button_button_pressed(joke: Joke):
 	$AnimationPlayer.play("talking")
+	_disable_buttons()
 	stamina -= joke.required_stamina
 
 	for body in transmitter_area.get_overlapping_bodies():
@@ -41,10 +51,6 @@ func _on_joke_button_button_pressed(joke: Joke):
 			continue
 
 		person.on_joke(joke)
-
-	if stamina <= 0:
-		_on_stamina_empty()
-
 
 func _on_stamina_empty():
 	get_node("../DisplayGUI").visible = false
@@ -62,8 +68,13 @@ func _on_stamina_empty():
 	score_overlay.visible = true
 	pass
 
-
 func ouch():
 	$Sprite2D.texture = ducking_texture
 	await get_tree().create_timer(1).timeout
 	$Sprite2D.texture = default_texture
+
+func _on_animation_player_animation_finished(anim_name):
+	if stamina <= 0:
+		_on_stamina_empty()
+	else:
+		_enable_buttons()
