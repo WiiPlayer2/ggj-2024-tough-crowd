@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dsbpdd7xdslx0"]
+[gd_scene load_steps=4 format=3 uid="uid://cxsuv8lnui8p7"]
 
 [ext_resource type="Script" path="res://scenes/tutorial.gd" id="1_i8rpu"]
 [ext_resource type="PackedScene" uid="uid://cik30de5gaaah" path="res://scenes/ingame_scene.tscn" id="2_lch8g"]
+[ext_resource type="Texture2D" uid="uid://dhpn2dswrkgyj" path="res://sprites/ui/controlls.svg" id="3_u3bmf"]
 
 [node name="Tutorial" type="Node2D"]
 script = ExtResource("1_i8rpu")
@@ -19,10 +20,18 @@ dragger_visibility = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="AspectRatioContainer/VSplitContainer"]
 layout_mode = 2
-text = "Can YOU please the crowd?
+bbcode_enabled = true
+text = "										
+									Can [b]YOU[/b] please the crowd?
 
-Throw out jokes but be aware that not every joke is for everyone.
-Can you please everyone before you run out of breath?"
+
+	Throw out jokes but be aware that not every joke is for everyone.
+	Can you please everyone before you run out of breath?
+
+
+	Use these buttons on your controller
+	or press A, S, or D on your keyboard
+	to tell a joke"
 
 [node name="CenterContainer" type="CenterContainer" parent="AspectRatioContainer/VSplitContainer"]
 layout_mode = 2
@@ -30,5 +39,9 @@ layout_mode = 2
 [node name="Button" type="Button" parent="AspectRatioContainer/VSplitContainer/CenterContainer"]
 layout_mode = 2
 text = "I'm ready for the show!"
+
+[node name="Controlls" type="Sprite2D" parent="."]
+position = Vector2(430, 219)
+texture = ExtResource("3_u3bmf")
 
 [connection signal="pressed" from="AspectRatioContainer/VSplitContainer/CenterContainer/Button" to="." method="_on_button_pressed"]
