@@ -4,8 +4,6 @@ signal button_pressed(joke)
 
 @export_enum("joke_button_1", "joke_button_2", "joke_button_3") var action: String
 @export var sprite: Sprite2D
-
-@export var stamina_categories: Array[int]
 @export var type_sprites: Array[Texture2D]
 
 var stamina_label: RichTextLabel
@@ -22,7 +20,7 @@ func _map_action_to_joke_type():
 			return Joke.JokeType.Joke3
 
 func _get_joke(type):
-	return Joke.new(type, stamina_categories[randi_range(0, stamina_categories.size() - 1)])
+	return Joke.get_random_joke(type)
 
 func _ready():
 	stamina_label = find_child("StaminaLabel")
