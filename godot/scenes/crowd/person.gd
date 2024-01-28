@@ -112,11 +112,10 @@ func _process(delta):
     if laughter_left >= 0:
         laughter_left -= delta
 
-    if not is_listening and mood > profile.happy_threshold * .5:
-        mood -= profile.happiness_decay * delta
-    elif not is_listening and mood < profile.lashout_threshold * .9:
-        mood += profile.lashout_decay * delta
-
+	if not is_listening and mood > profile.happy_threshold * .9:
+		mood -= profile.happiness_decay * delta
+	elif not is_listening and mood < profile.lashout_threshold * .9:
+		mood += profile.lashout_decay * delta
 
     if mood < profile.lashout_threshold:
         throw_bottle()
@@ -132,11 +131,13 @@ func _input(event):
             update_mood(-1.)
 
 func update_mood(change: float):
-    if mood > profile.happy_threshold and change > 0 and laughter_left <= 0:
-        laughter_left = laughter_duration
-        # bob head
-        var tween = get_tree().create_tween().bind_node(self).set_loops(laughter_bobs)
-        var bob_duration = laughter_duration / laughter_bobs / 2
+	if laughter_left <= 0 and change > 0 and (mood + change) > profile.happy_threshold :
+		laughter_left = laughter_duration
+		# bob head
+		var tween = get_tree().create_tween().bind_node(self).set_loops(laughter_bobs)
+		var bob_duration = laughter_duration / laughter_bobs / 2
+		tween.tween_property(face, "position", Vector2.UP * 20, bob_duration).set_delay(randf_range(0, bob_duration))
+		tween.tween_property(face, "position", Vector2.ZERO, bob_duration)
 
         $Speaker.stream = get_random_laugh()
         $Speaker.play()
@@ -179,17 +180,17 @@ func on_joke_start():
     is_listening = true
 
 func on_hear_joke(joke: Joke):
-    var mood_change = profile.joke_mood_mapping.get(joke.type, 0) * joke.effectiveness
-    if joke.type == last_joke_heard:
-        mood_change = min(0, mood_change)
-    update_mood(mood_change)
-    last_joke_heard = joke.type
+	var mood_change = profile.joke_mood_mapping.get(joke.type, 0) * joke.effectiveness
+	if joke.type == last_joke_heard and mood_change > 0:
+		mood_change *= .5
+	update_mood(mood_change)
+	last_joke_heard = joke.type
 
 func on_joke_finish():
     is_listening = false
 
 func throw_bottle():
-    mood += 2.0
+	mood = profile.lashout_threshold * 0.99
 
     $Speaker.stream = get_random_buh()
     $Speaker.play()
