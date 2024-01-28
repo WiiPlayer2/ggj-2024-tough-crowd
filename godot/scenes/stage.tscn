@@ -141,6 +141,8 @@ libraries = {
 "": SubResource("AnimationLibrary_xvfym")
 }
 
+[node name="Speaker" type="AudioStreamPlayer2D" parent="Tim"]
+
 [node name="Boundary" type="Node2D" parent="."]
 script = ExtResource("2_8p6ir")
 width = 400.0

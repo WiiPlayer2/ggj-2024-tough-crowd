@@ -27,3 +27,6 @@ shape = SubResource("RectangleShape2D_5rd5b")
 
 [node name="Profile" type="Node2D" parent="."]
 script = ExtResource("2_bsodr")
+
+[node name="Speaker" type="AudioStreamPlayer2D" parent="."]
+bus = &"Sound"
