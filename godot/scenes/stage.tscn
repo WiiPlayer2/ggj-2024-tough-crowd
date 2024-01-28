@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://cicyfp5xjvvu4"]
+[gd_scene load_steps=19 format=3 uid="uid://cicyfp5xjvvu4"]
 
 [ext_resource type="Texture2D" uid="uid://bg85if5rrrdmm" path="res://sprites/room/buehne.svg" id="1_32lst"]
 [ext_resource type="Script" path="res://scenes/Tim.gd" id="1_g3k2b"]
 [ext_resource type="Texture2D" uid="uid://kq63ictuirhc" path="res://sprites/tim_side.png" id="1_saxit"]
 [ext_resource type="Script" path="res://scenes/Boundary.gd" id="2_8p6ir"]
 [ext_resource type="PackedScene" uid="uid://r1i7ln2hpwq5" path="res://scenes/joke_button.tscn" id="3_0t41i"]
+[ext_resource type="Texture2D" uid="uid://bmx2q0w1s046n" path="res://sprites/ui/spotlight.svg" id="3_8lu50"]
 [ext_resource type="Texture2D" uid="uid://b8tb4o75kjffn" path="res://sprites/tim_talk.svg" id="3_e1fvx"]
 [ext_resource type="Script" path="res://scenes/DisplayStamina.gd" id="6_88orn"]
 [ext_resource type="FontFile" uid="uid://le2vdo2626vw" path="res://fonts/Montserrat-Medium.ttf" id="6_pb3a7"]
@@ -121,9 +122,18 @@ action = "joke_button_3"
 
 [node name="Joke Transmitter" type="Node2D" parent="Tim"]
 
+[node name="Spotlight" type="PointLight2D" parent="Tim/Joke Transmitter"]
+self_modulate = Color(1, 1, 1, 0)
+show_behind_parent = true
+z_index = -20
+position = Vector2(2.08165e-12, -500)
+energy = 0.4
+texture = ExtResource("3_8lu50")
+
 [node name="Area2D" type="Area2D" parent="Tim/Joke Transmitter"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tim/Joke Transmitter/Area2D"]
+position = Vector2(0, -176)
 shape = SubResource("RectangleShape2D_wmfel")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Tim"]
