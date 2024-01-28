@@ -12,6 +12,9 @@ extends Node2D
 
 @export_enum("angry", "neutral", "happy", "laugh") var expression
 
+var is_listening : bool = false
+var last_joke_heard : Joke.JokeType = -1
+
 var known_faces : Array[String] = [
 	"res://scenes/faces/face_curly.tscn",
 	"res://scenes/faces/face_jenny.tscn",
@@ -80,9 +83,9 @@ func _process(delta):
 	if laughter_left >= 0:
 		laughter_left -= delta
 
-	if mood > profile.happy_threshold * .5:
+	if not is_listening and mood > profile.happy_threshold * .5:
 		mood -= profile.happiness_decay * delta
-	elif mood < profile.lashout_threshold * .9:
+	elif not is_listening and mood < profile.lashout_threshold * .9:
 		mood += profile.lashout_decay * delta
 
 
@@ -134,6 +137,17 @@ func set_random_face():
 	var face_res = load(known_faces[randi() % known_faces.size()])
 	face = face_res.instantiate()
 	head.add_child(face)
+
+func on_joke_start():
+	is_listening = true
+	
+func on_joke_finish(joke: Joke):
+	is_listening = false
+	var mood_change = profile.joke_mood_mapping.get(joke.type, 0)
+	if joke.type == last_joke_heard:
+		mood_change = max(0, mood_change)
+	update_mood(mood_change)
+	last_joke_heard = joke.type
 
 func on_joke(joke: Joke):
 	var mood_change = profile.joke_mood_mapping.get(joke.type, 0)
