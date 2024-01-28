@@ -39,9 +39,9 @@ var joke_mood_mapping: Dictionary
 
 static func get_profile_data(index) -> ProfileData:
 	var profiles = [
-		ProfileData.new(3, -3, -10, 0.1, 0.1, {0: 1, 1: -0.25, 2: 0}),
-		ProfileData.new(3, -3, -10, 0.1, 0.1, {0: 0, 1: 1, 2: -0.25}),
-		ProfileData.new(3, -3, -10, 0.1, 0.1, {0: -0.25, 1: 0, 2: 1}),
+		ProfileData.new(3, -3, -10, 0.1, 0.1, {0: 1, 1: -0.25, 2: 0, 3: 2}),
+		ProfileData.new(3, -3, -10, 0.1, 0.1, {0: 0, 1: 1, 2: -0.25, 3: 2}),
+		ProfileData.new(3, -3, -10, 0.1, 0.1, {0: -0.25, 1: 0, 2: 1, 3: 2}),
 	]
 	return profiles[index]
 
