@@ -163,3 +163,4 @@ script = ExtResource("7_5m0td")
 [connection signal="button_pressed" from="Tim/Joke Buttons/Joke Button 1" to="Tim" method="_on_joke_button_button_pressed"]
 [connection signal="button_pressed" from="Tim/Joke Buttons/Joke Button 2" to="Tim" method="_on_joke_button_button_pressed"]
 [connection signal="button_pressed" from="Tim/Joke Buttons/Joke Button 3" to="Tim" method="_on_joke_button_button_pressed"]
+[connection signal="animation_finished" from="Tim/AnimationPlayer" to="Tim" method="_on_animation_player_animation_finished"]
