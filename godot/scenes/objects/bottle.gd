@@ -1,5 +1,7 @@
 extends Sprite2D
 
+signal hit_tim
+
 @export var bottle_speed: float = 120;
 
 var tim_global_position: Vector2
@@ -29,4 +31,5 @@ func _on_growth_timer_timeout():
 func remove_bottle():
 	if is_hidding:
 		print("Ouch")
+		Signals.hit_tim.emit()
 	queue_free()

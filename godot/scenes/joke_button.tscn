@@ -9,7 +9,13 @@
 script = ExtResource("1_lofpb")
 action = "joke_button_1"
 sprite = NodePath("Sprite2D")
+stamina_categories = Array[int]([1, 5, 10])
 type_sprites = Array[Texture2D]([ExtResource("3_26ki8"), ExtResource("2_ivsb5"), ExtResource("4_o1r21")])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_ivsb5")
+
+[node name="StaminaLabel" type="RichTextLabel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+text = "xx"

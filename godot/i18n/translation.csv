@@ -15,3 +15,5 @@ settings_volume_sound,Sound Volume,Sound Lautstärke
 settings_language,Game Language,Spielsprache
 game_paused,Game paused,Spiel pausiert
 resume_game,Resume game,Weiterspielen
+game_over,That's a wrap!,Das war's!
+your_score,Your score:,Deine Punkte:

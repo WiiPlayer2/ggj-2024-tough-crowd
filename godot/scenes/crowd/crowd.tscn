@@ -8,126 +8,126 @@
 position = Vector2(240, 232)
 script = ExtResource("1_y7wyj")
 
-[node name="Tables" type="Node" parent="."]
+[node name="Tables" type="Node2D" parent="."]
 
 [node name="Table_1" type="Sprite2D" parent="Tables"]
 z_index = 35
-position = Vector2(170, 199)
+position = Vector2(-70, -33)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_bax5s")
 
 [node name="Table_2" type="Sprite2D" parent="Tables"]
 z_index = 25
-position = Vector2(359, 138)
+position = Vector2(119, -94)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_bax5s")
 
 [node name="Table_3" type="Sprite2D" parent="Tables"]
 z_index = 15
-position = Vector2(203, 84)
+position = Vector2(-37, -148)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_bax5s")
 
 [node name="Table_4" type="Sprite2D" parent="Tables"]
 z_index = 45
-position = Vector2(319, 230)
+position = Vector2(79, -2)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_bax5s")
 
-[node name="Seats" type="Node" parent="."]
+[node name="Seats" type="Node2D" parent="."]
 
 [node name="Seat_5" type="Node2D" parent="Seats"]
 z_index = 10
-position = Vector2(205, 35)
+position = Vector2(-35, -197)
 
 [node name="Chair" parent="Seats/Seat_5" instance=ExtResource("3_y4hpm")]
 
 [node name="Seat_6" type="Node2D" parent="Seats"]
 z_index = 12
-position = Vector2(159, 79)
+position = Vector2(-81, -153)
 
 [node name="Chair" parent="Seats/Seat_6" instance=ExtResource("3_y4hpm")]
 
 [node name="Seat_7" type="Node2D" parent="Seats"]
 z_index = 13
-position = Vector2(249, 81)
+position = Vector2(9, -151)
 
 [node name="Chair" parent="Seats/Seat_7" instance=ExtResource("3_y4hpm")]
 
 [node name="Seat_8" type="Node2D" parent="Seats"]
 z_index = 17
-position = Vector2(204, 130)
+position = Vector2(-36, -102)
 
 [node name="Chair" parent="Seats/Seat_8" instance=ExtResource("3_y4hpm")]
 
 [node name="Seat_9" type="Node2D" parent="Seats"]
 z_index = 20
-position = Vector2(359, 94)
+position = Vector2(119, -138)
 
 [node name="Chair" parent="Seats/Seat_9" instance=ExtResource("3_y4hpm")]
 
 [node name="Seat_10" type="Node2D" parent="Seats"]
 z_index = 22
-position = Vector2(311, 137)
+position = Vector2(71, -95)
 
 [node name="Chair" parent="Seats/Seat_10" instance=ExtResource("3_y4hpm")]
 
 [node name="Seat_11" type="Node2D" parent="Seats"]
 z_index = 23
-position = Vector2(401, 133)
+position = Vector2(161, -99)
 
 [node name="Chair" parent="Seats/Seat_11" instance=ExtResource("3_y4hpm")]
 
 [node name="Seat_12" type="Node2D" parent="Seats"]
 z_index = 26
-position = Vector2(359, 184)
+position = Vector2(119, -48)
 
 [node name="Chair" parent="Seats/Seat_12" instance=ExtResource("3_y4hpm")]
 
 [node name="Seat_1" type="Node2D" parent="Seats"]
 z_index = 30
-position = Vector2(168, 156)
+position = Vector2(-72, -76)
 
 [node name="Chair" parent="Seats/Seat_1" instance=ExtResource("3_y4hpm")]
 
 [node name="Seat_2" type="Node2D" parent="Seats"]
 z_index = 32
-position = Vector2(122, 197)
+position = Vector2(-118, -35)
 
 [node name="Chair" parent="Seats/Seat_2" instance=ExtResource("3_y4hpm")]
 
 [node name="Seat_3" type="Node2D" parent="Seats"]
 z_index = 33
-position = Vector2(217, 199)
+position = Vector2(-23, -33)
 
 [node name="Chair" parent="Seats/Seat_3" instance=ExtResource("3_y4hpm")]
 
 [node name="Seat_4" type="Node2D" parent="Seats"]
 z_index = 36
-position = Vector2(166, 244)
+position = Vector2(-74, 12)
 
 [node name="Chair" parent="Seats/Seat_4" instance=ExtResource("3_y4hpm")]
 
 [node name="Seat_13" type="Node2D" parent="Seats"]
 z_index = 40
-position = Vector2(315, 187)
+position = Vector2(75, -45)
 
 [node name="Chair" parent="Seats/Seat_13" instance=ExtResource("3_y4hpm")]
 
 [node name="Seat_14" type="Node2D" parent="Seats"]
 z_index = 42
-position = Vector2(276, 232)
+position = Vector2(36, 0)
 
 [node name="Chair" parent="Seats/Seat_14" instance=ExtResource("3_y4hpm")]
 
 [node name="Seat_15" type="Node2D" parent="Seats"]
 z_index = 43
-position = Vector2(366, 231)
+position = Vector2(126, -1)
 
 [node name="Chair" parent="Seats/Seat_15" instance=ExtResource("3_y4hpm")]
 
 [node name="Seat_16" type="Node2D" parent="Seats"]
 z_index = 46
-position = Vector2(320, 274)
+position = Vector2(80, 42)
 
 [node name="Chair" parent="Seats/Seat_16" instance=ExtResource("3_y4hpm")]
