@@ -1,5 +1,5 @@
 keys,en,de
-credits,Credits here,Credits hier
+credits,"© Koveras, Pytunia, Rinma, WiiPlayer2","© Koveras, Pytunia, Rinma, WiiPlayer2"
 new_game,New Game,Neues Spiel
 continue,Continue,Fortfahren
 settings,Game Settings,Einstellungen
@@ -17,3 +17,25 @@ game_paused,Game paused,Spiel pausiert
 resume_game,Resume game,Weiterspielen
 game_over,That's a wrap!,Das war's!
 your_score,Your score:,Deine Punkte:
+tutorial,"										
+									Can [b]YOU[/b] please the crowd?
+
+
+	Throw out jokes but be aware that not every joke is for everyone.
+	Can you please everyone before you run out of breath?
+
+
+	Use these buttons on your controller
+	or press A, S, or D on your keyboard
+	to tell a joke","										
+									Kannst [b]DU[/b] die Menge zufriedenstellen??
+
+
+  Hau Witze raus, aber bedenke, dass nicht jeder Witz für jeden ist.
+  Kannst du alle zufriedenstellen, bevor dir die Puste ausgeht?
+
+
+  Nutze diese Tasten auf deinem Controller
+  oder A, S oder D auf deiner Tastatur,  um
+  einen Witz zu erzählen"
+tutorial_button,I'm ready for the show!,Ich bin für die Show bereit!

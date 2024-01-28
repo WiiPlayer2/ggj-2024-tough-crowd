@@ -21,24 +21,14 @@ dragger_visibility = 2
 [node name="RichTextLabel" type="RichTextLabel" parent="AspectRatioContainer/VSplitContainer"]
 layout_mode = 2
 bbcode_enabled = true
-text = "										
-									Can [b]YOU[/b] please the crowd?
-
-
-	Throw out jokes but be aware that not every joke is for everyone.
-	Can you please everyone before you run out of breath?
-
-
-	Use these buttons on your controller
-	or press A, S, or D on your keyboard
-	to tell a joke"
+text = "tutorial"
 
 [node name="CenterContainer" type="CenterContainer" parent="AspectRatioContainer/VSplitContainer"]
 layout_mode = 2
 
 [node name="Button" type="Button" parent="AspectRatioContainer/VSplitContainer/CenterContainer"]
 layout_mode = 2
-text = "I'm ready for the show!"
+text = "tutorial_button"
 
 [node name="Controlls" type="Sprite2D" parent="."]
 position = Vector2(430, 219)
