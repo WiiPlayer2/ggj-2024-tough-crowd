@@ -140,14 +140,16 @@ func set_random_face():
 
 func on_joke_start():
 	is_listening = true
-	
-func on_joke_finish(joke: Joke):
-	is_listening = false
+
+func on_hear_joke(joke: Joke):
 	var mood_change = profile.joke_mood_mapping.get(joke.type, 0)
 	if joke.type == last_joke_heard:
 		mood_change = min(0, mood_change)
 	update_mood(mood_change)
 	last_joke_heard = joke.type
+
+func on_joke_finish():
+	is_listening = false
 
 func throw_bottle():
 	mood += 2.0
