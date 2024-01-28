@@ -149,10 +149,6 @@ func on_joke_finish(joke: Joke):
 	update_mood(mood_change)
 	last_joke_heard = joke.type
 
-func on_joke(joke: Joke):
-	var mood_change = profile.joke_mood_mapping.get(joke.type, 0)
-	update_mood(mood_change)
-
 func throw_bottle():
 	mood += 2.0
 

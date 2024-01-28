@@ -44,14 +44,25 @@ func _on_joke_button_button_pressed(joke: Joke):
 	last_joke = joke
 	stamina -= joke.required_stamina
 	_disable_buttons()
+	_start_joke_for_audience()
 	$AnimationPlayer.play("talking")
 
-func _tell_joke_to_audience(joke: Joke):
+func _get_targeted_audience_members() -> Array[AudienceMember]:
+	var arr: Array[AudienceMember]
 	for body in transmitter_area.get_overlapping_bodies():
 		var person = body.find_parent("Person")
 		if not (person is AudienceMember):
 			continue
-		person.on_joke(joke)
+		arr.append(person)
+	return arr
+
+func _start_joke_for_audience():
+	for person in _get_targeted_audience_members():
+		person.on_joke_start()
+
+func _finish_joke_for_audience(joke: Joke):
+	for person in _get_targeted_audience_members():
+		person.on_joke_finish(joke)
 
 func _on_stamina_empty():
 	get_node("../DisplayGUI").visible = false
@@ -75,7 +86,7 @@ func ouch():
 	$Sprite2D.texture = default_texture
 
 func _on_animation_player_animation_finished(anim_name):
-	_tell_joke_to_audience(last_joke)
+	_finish_joke_for_audience(last_joke)
 	if stamina <= 0:
 		_on_stamina_empty()
 	else:
