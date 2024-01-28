@@ -1,6 +1,16 @@
 class_name AudienceProfile
 extends Node2D
 
+const HAPPY_THRESHOLD: float = 2
+const ANGRY_THRESHOLD: float = -1
+const LASHOUT_THRESHOLD: float = -5
+const HAPPINESS_DECAY: float = .01
+const LASHOUT_DECAY: float = .01
+
+const GOOD_REACTION: float = 1
+const NEUTRAL_REACTION: float = .1
+const BAD_REACTION: float = -1.2
+const BOTTLE_REACTION: float = 3
 
 class ProfileData:
 	var happy_threshold: float
@@ -39,22 +49,11 @@ var joke_mood_mapping: Dictionary
 
 static func get_profile_data(index) -> ProfileData:
 	var profiles = [
-		ProfileData.new(3, -3, -10, 0.1, 0.1, {0: 1, 1: -0.25, 2: 0, 3: 2}),
-		ProfileData.new(3, -3, -10, 0.1, 0.1, {0: 0, 1: 1, 2: -0.25, 3: 2}),
-		ProfileData.new(3, -3, -10, 0.1, 0.1, {0: -0.25, 1: 0, 2: 1, 3: 2}),
+		ProfileData.new(HAPPY_THRESHOLD, ANGRY_THRESHOLD, LASHOUT_THRESHOLD, HAPPINESS_DECAY, LASHOUT_DECAY, {0: GOOD_REACTION, 1: BAD_REACTION, 2: NEUTRAL_REACTION, 3: BOTTLE_REACTION}),
+		ProfileData.new(HAPPY_THRESHOLD, ANGRY_THRESHOLD, LASHOUT_THRESHOLD, HAPPINESS_DECAY, LASHOUT_DECAY, {0: NEUTRAL_REACTION, 1: GOOD_REACTION, 2: BAD_REACTION, 3: BOTTLE_REACTION}),
+		ProfileData.new(HAPPY_THRESHOLD, ANGRY_THRESHOLD, LASHOUT_THRESHOLD, HAPPINESS_DECAY, LASHOUT_DECAY, {0: BAD_REACTION, 1: NEUTRAL_REACTION, 2: GOOD_REACTION, 3: BOTTLE_REACTION}),
 	]
 	return profiles[index]
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass  # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
-
 
 func load_data(data: ProfileData):
 	happy_threshold = data.happy_threshold

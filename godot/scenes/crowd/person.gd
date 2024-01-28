@@ -83,7 +83,7 @@ func _process(delta):
 	if laughter_left >= 0:
 		laughter_left -= delta
 
-	if not is_listening and mood > profile.happy_threshold * .5:
+	if not is_listening and mood > profile.happy_threshold * .9:
 		mood -= profile.happiness_decay * delta
 	elif not is_listening and mood < profile.lashout_threshold * .9:
 		mood += profile.lashout_decay * delta
@@ -103,7 +103,7 @@ func _input(event):
 			update_mood(-1.)
 
 func update_mood(change: float):
-	if mood > profile.happy_threshold and change > 0 and laughter_left <= 0:
+	if laughter_left <= 0 and change > 0 and (mood + change) > profile.happy_threshold :
 		laughter_left = laughter_duration
 		# bob head
 		var tween = get_tree().create_tween().bind_node(self).set_loops(laughter_bobs)
@@ -143,8 +143,8 @@ func on_joke_start():
 
 func on_hear_joke(joke: Joke):
 	var mood_change = profile.joke_mood_mapping.get(joke.type, 0) * joke.effectiveness
-	if joke.type == last_joke_heard:
-		mood_change = min(0, mood_change)
+	if joke.type == last_joke_heard and mood_change > 0:
+		mood_change *= .5
 	update_mood(mood_change)
 	last_joke_heard = joke.type
 
@@ -152,7 +152,7 @@ func on_joke_finish():
 	is_listening = false
 
 func throw_bottle():
-	mood += 2.0
+	mood = profile.lashout_threshold * 0.99
 
 	var bottle_scene = preload("res://scenes/objects/bottle.tscn")
 	var bottle = bottle_scene.instantiate()
