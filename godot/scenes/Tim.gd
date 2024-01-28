@@ -96,11 +96,18 @@ func _on_stamina_empty():
 
 func ouch():
 	$Sprite2D.texture = ducking_texture
+	var bottle_joke = Joke.get_bottle_joke()
 	_start_joke_for_audience()
+	stamina -= bottle_joke.required_stamina
+
 	await get_tree().create_timer(1).timeout
+
 	$Sprite2D.texture = default_texture
-	_tell_joke_for_audience(Joke.get_bottle_joke(), true)
+	_tell_joke_for_audience(bottle_joke, true)
 	_finish_joke_for_audience()
+
+	if stamina <= 0:
+		_on_stamina_empty()
 
 func _on_animation_player_animation_finished(anim_name):
 	_tell_joke_for_audience(last_joke, false)

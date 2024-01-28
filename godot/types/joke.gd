@@ -19,7 +19,7 @@ var required_stamina: int
 var effectiveness: float
 
 static func get_bottle_joke():
-	return Joke.new(JokeType.Bottle, 0, 1)
+	return Joke.new(JokeType.Bottle, 5, 1)
 
 static func get_random_joke(type):
 	var stamina = STAMINA_CATEGORIES[randi_range(0, STAMINA_CATEGORIES.size() - 1)]
