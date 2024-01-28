@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Tough Crowd"
+config/description="Tough Crowd is a resource management game where you play as a Standup Comedian. The crowd is tough, but so are you. Can you find the right jokes and please your audience before you run out of jokes?"
 run/main_scene="res://scenes/boot/godot/godot_bootsplash_scene.tscn"
 config/features=PackedStringArray("4.2")
 config/icon="res://icon.svg"
