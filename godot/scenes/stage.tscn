@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cicyfp5xjvvu4"]
+[gd_scene load_steps=21 format=3 uid="uid://cicyfp5xjvvu4"]
 
 [ext_resource type="Texture2D" uid="uid://bg85if5rrrdmm" path="res://sprites/room/buehne.svg" id="1_32lst"]
 [ext_resource type="Script" path="res://scenes/Tim.gd" id="1_g3k2b"]
@@ -11,6 +11,8 @@
 [ext_resource type="FontFile" uid="uid://le2vdo2626vw" path="res://fonts/Montserrat-Medium.ttf" id="6_pb3a7"]
 [ext_resource type="Texture2D" uid="uid://d2264dy2o4q6d" path="res://sprites/tim_side.svg" id="6_qpa7m"]
 [ext_resource type="Script" path="res://scenes/DisplayMood.gd" id="7_5m0td"]
+[ext_resource type="Texture2D" uid="uid://47lbaswim5ha" path="res://sprites/ui/budget.svg" id="12_3gqpf"]
+[ext_resource type="Texture2D" uid="uid://72ejr2l2s1la" path="res://sprites/ui/score.svg" id="13_ru6jc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jfw8v"]
 radius = 23.0217
@@ -150,28 +152,46 @@ width = 400.0
 [node name="DisplayGUI" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 
-[node name="Stamina" type="Label" parent="DisplayGUI"]
-offset_right = 80.0
-offset_bottom = 46.0
-text = "100"
-label_settings = SubResource("LabelSettings_aq472")
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("6_88orn")
-
 [node name="Mood" type="Label" parent="DisplayGUI"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -170.0
+offset_top = 28.0
 offset_right = -10.0
-offset_bottom = 46.0
+offset_bottom = 74.0
 grow_horizontal = 0
 text = "0"
 label_settings = SubResource("LabelSettings_aq472")
 horizontal_alignment = 2
 vertical_alignment = 1
 script = ExtResource("7_5m0td")
+
+[node name="Position_Mood" type="Area2D" parent="DisplayGUI/Mood"]
+position = Vector2(-406, 7)
+
+[node name="budget" type="Sprite2D" parent="DisplayGUI"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("12_3gqpf")
+offset = Vector2(190, 80)
+
+[node name="score" type="Sprite2D" parent="DisplayGUI"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("13_ru6jc")
+offset = Vector2(2700, 80)
+
+[node name="Stamina" type="Label" parent="DisplayGUI"]
+offset_top = 29.0
+offset_right = 80.0
+offset_bottom = 75.0
+text = "100"
+label_settings = SubResource("LabelSettings_aq472")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_88orn")
+
+[node name="Position_Stamina" type="Area2D" parent="DisplayGUI/Stamina"]
+position = Vector2(0, 6)
 
 [connection signal="button_pressed" from="Tim/Joke Buttons/Joke Button 1" to="Tim" method="_on_joke_button_button_pressed"]
 [connection signal="button_pressed" from="Tim/Joke Buttons/Joke Button 2" to="Tim" method="_on_joke_button_button_pressed"]
